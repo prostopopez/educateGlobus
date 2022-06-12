@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="98b88db5-44eb-414c-8c79-b7df25e2b8d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,18 +37,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Files\Learning\Diplom\labrioteka\src\services\dbSetUp" />
@@ -140,6 +142,7 @@
       <workItem from="1592622041726" duration="16911000" />
       <workItem from="1592721666096" duration="44426000" />
       <workItem from="1648817087395" duration="957000" />
+      <workItem from="1655028230565" duration="6046000" />
     </task>
     <servers />
   </component>
@@ -148,67 +151,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1032" y="177" key="#Configure_Path_Variables" timestamp="1590068587697">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1032" y="177" key="#Configure_Path_Variables/0.0.1920.1040@0.0.1920.1040" timestamp="1590068587697" />
-    <state x="1032" y="177" key="#ESLint" timestamp="1591530468365">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1032" y="177" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1591530468365" />
-    <state x="828" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592760121810">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="828" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592760121810" />
-    <state x="1170" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591366639929">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1170" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591366639929" />
-    <state x="1075" y="300" width="730" height="633" key="EditFileWatcherDialog" timestamp="1592629135476">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1075" y="300" width="730" height="633" key="EditFileWatcherDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592629135476" />
-    <state x="1220" y="277" key="FileChooserDialogImpl" timestamp="1592629134192">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1220" y="277" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592629134192" />
-    <state width="936" height="271" key="GridCell.Tab.0.bottom" timestamp="1591787309005">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="936" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591787309005" />
-    <state width="936" height="271" key="GridCell.Tab.0.center" timestamp="1591787309005">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="936" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591787309005" />
-    <state width="936" height="271" key="GridCell.Tab.0.left" timestamp="1591787309005">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="936" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591787309005" />
-    <state width="936" height="271" key="GridCell.Tab.0.right" timestamp="1591787309005">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="936" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591787309005" />
-    <state x="1004" y="154" width="916" height="739" key="SettingsEditor" timestamp="1592629136512">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1004" y="154" width="916" height="739" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592629136512" />
-    <state x="1072" y="137" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591430407870">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1072" y="137" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591430407870" />
-    <state x="1249" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591884377076">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1249" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591884377076" />
-    <state x="1096" y="236" width="672" height="677" key="run.anything.popup" timestamp="1592784693609">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1096" y="236" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592784693609" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592783878290">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592783878290" />
   </component>
 </project>
