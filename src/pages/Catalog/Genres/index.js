@@ -41,7 +41,7 @@ class Genres extends React.Component {
         const { dataGenres } = this.state;
 
         return <div className={'genres'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Жанры`}</h1>
                 <hr/>
                 {dataGenres.length <= 0

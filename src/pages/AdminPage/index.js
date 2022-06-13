@@ -135,7 +135,7 @@ class AdminPage extends React.Component {
         } = this.state;
 
         return <div className={'admin'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Админ Панель`}</h1>
                 <hr/>
                 <div className={cn('bookBlock', { isAddingBook, isEditingBook, isDeletingBook })}>

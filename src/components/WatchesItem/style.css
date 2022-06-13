@@ -1,0 +1,44 @@
+.watchesItem {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 60px;
+  max-width: 476px;
+  max-height: 780px;
+  box-shadow: 0 4px 31px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  color: black;
+}
+.watchesItem .imgWatch {
+  width: 100%;
+  height: 319px;
+}
+.watchesItem .imgWatch img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.watchesItem .textWatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.watchesItem .textWatch .stars {
+  margin: 20px 0 8px 0;
+}
+.watchesItem .textWatch .nameWatch {
+  margin: 15px 0;
+  width: 100%;
+}
+.watchesItem .textWatch .elementWatch {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0;
+  width: 100%;
+}
+.watchesItem .textWatch .priceWatch {
+  margin-top: 25px;
+}
+/*# sourceMappingURL=style.css.map */

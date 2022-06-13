@@ -8,6 +8,7 @@ const booksData = require('./getBooksData');
 const authorsData = require('./getAuthorsData');
 const genresData = require('./getGenresData');
 const collectionsData = require('./getCollectionsData');
+const promoData = require('./getPromoData');
 const userData = require('./userModel');
 
 const API_PORT = 3001;
@@ -16,7 +17,7 @@ app.use(cors());
 const router = express.Router();
 
 const dbRoute =
-    'mongodb+srv://prostopopez:prostopopez@cluster0.qljpi.mongodb.net/labrioteka?retryWrites=true&w=majority';
+    'mongodb+srv://prostopopez:prostopopez@cluster0.qljpi.mongodb.net/educateGlobus?retryWrites=true&w=majority';
 
 mongoose.connect(dbRoute, { useNewUrlParser: true });
 
@@ -122,17 +123,57 @@ router.post('/putBooksData', (req, res) => {
     });
 });
 
+router.get('/getPromoData', (req, res) => {
+    promoData.find((err, data) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: data});
+    });
+});
+
+router.post('/putPromoData', (req, res) => {
+    let data = new promoData();
+
+    const {
+        _id,
+        promoCode
+    } = req.body;
+
+    if ((!_id && _id !== 0)
+        || !promoCode) {
+
+        return res.json({
+            success: false,
+            error: 'INVALID INPUTS',
+        });
+    }
+    data.promoCode = promoCode;
+    data._id = _id;
+    data.save((err) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true});
+    });
+});
+
 router.get('/getUserData', (req, res) => {
     userData.find((err, data) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true, data: data});
+    });
+});
+
+router.post('/updateUserData', (req, res) => {
+    const { _id, update } = req.body;
+    userData.findByIdAndUpdate(_id, update, (err) => {
         if (err) return res.json({ success: false, error: err });
-        return res.json({ success: true, data: data });
+        return res.json({ success: true });
     });
 });
 
 router.post('/putUserData', (req, res) => {
     let data = new userData();
 
-    const { id,
+    const {
+        id,
         username,
         password
     } = req.body;
@@ -145,10 +186,11 @@ router.post('/putUserData', (req, res) => {
     }
     data.username = username;
     data.password = password;
+    data.promos_id = [];
     data.id = id;
     data.save((err) => {
-        if (err) return res.json({ success: false, error: err });
-        return res.json({ success: true });
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true});
     });
 });
 

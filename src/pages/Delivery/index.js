@@ -99,7 +99,7 @@ class DeliveryPage extends React.Component {
         const { location } = this.state;
 
         return <div className={'delivery'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Доставка`}</h1>
                 <hr/>
                 <div className={'deliveryWrapper'}>

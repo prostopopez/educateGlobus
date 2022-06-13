@@ -1,166 +1,80 @@
-.mainStyle {
-  padding: 0 0 80px 0;
+.aboutUs {
+  padding: 60px 0 35px 0;
 }
-.contFeedback {
+.aboutUs h1 {
+  margin-bottom: 40px;
+}
+.aboutUs p {
+  font-size: 30px;
+  text-align: center;
+}
+.aboutUs blockquote {
+  margin-bottom: 85px;
+  margin-top: 27px;
+  font-size: 20px;
+}
+.aboutUs .forButtons {
+  display: flex;
+}
+.aboutUs .link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.aboutUs .link:first-of-type {
+  margin-right: 35px;
+}
+.watchesBack {
+  height: 250px;
+}
+.watchesBack img {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  height: 100%;
+  object-fit: cover;
 }
-/* grid shell for offerCard */
-.offerBlock {
-  margin-bottom: 15%;
+.hits {
+  padding: 50px 0;
+}
+.hits .hitGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 3%;
-  grid-column-gap: 2%;
-  justify-content: center;
-  /* responsible for expanding blocks */
-  /* and this as well */
+  grid-template-columns: repeat(2, 476px);
+  grid-column-gap: 30px;
 }
-.offerBlock .offerCard:first-of-type {
-  grid-row-start: 1;
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
-.offerBlock .offerCard:nth-of-type(2) {
-  grid-row-start: 1;
-  grid-column-start: 3;
-  grid-column-end: 5;
-}
-@media (max-width: 414px) {
-  .offerBlock {
-    margin-bottom: 100%;
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 1%;
-  }
-  .offerBlock .offerCard:first-of-type,
-  .offerBlock .offerCard:nth-of-type(2) {
-    grid-row-start: initial;
-    grid-column-start: initial;
-    grid-column-end: initial;
-  }
-}
-.offerCard {
-  margin: 0;
-}
-/* grid shell for Preview Element */
-.previewGrid {
-  margin-bottom: 5%;
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 5%;
-  grid-column-gap: 2%;
-  justify-content: center;
-}
-@media (max-width: 414px) {
-  .previewGrid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-.previewGrid .item {
-  display: none;
-}
-/* additional styles for Preview Sights */
-.isSight {
-  grid-template-columns: repeat(4, 1fr);
-}
-@media (max-width: 414px) {
-  .isSight {
-    margin-left: -7%;
-    min-width: 100vw;
-    margin-right: auto;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: left;
-    overflow: scroll;
-    grid-column-gap: 7%;
-  }
-  .isSight .item {
-    display: block;
-    width: 0.1px;
-  }
-}
-.mainGridCOnt {
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-areas: "h h h a a" "d d d d d";
-}
-.mainGridCOnt h2 {
-  grid-area: h;
-}
-@media (max-width: 768px) {
-  .mainGridCOnt h2 {
-    order: 1;
-  }
-}
-.mainGridCOnt .areaLink {
-  grid-area: a;
-}
-@media (max-width: 768px) {
-  .mainGridCOnt .areaLink {
-    margin-top: 25px;
-    order: 3;
-  }
-}
-.mainGridCOnt .contGrid {
-  grid-area: d;
-}
-@media (max-width: 768px) {
-  .mainGridCOnt .contGrid {
-    order: 2;
-  }
-}
-@media (max-width: 768px) {
-  .mainGridCOnt {
-    grid-template-areas: "h h h h h" "d d d d d" "a a a a a";
-  }
-}
-.mainGridCOntFeed {
-  grid-template-areas: "h a a a a" "d d d d d";
-}
-@media (max-width: 768px) {
-  .mainGridCOntFeed {
-    grid-template-areas: "h h h h h" "d d d d d" "a a a a a";
-  }
-}
-.mainGridCOntView {
-  grid-template-areas: "h h a a a" "d d d d d";
-}
-@media (max-width: 768px) {
-  .mainGridCOntView {
-    grid-template-areas: "h h h h h" "d d d d d" "a a a a a";
-  }
-}
-.sightsMainTitle {
-  display: flex;
-  flex-direction: column;
-}
-.feedbacksMain {
+.gallery {
   margin-top: 60px;
 }
-.feedbackMain {
+.gallery .galleryGrid {
+  margin-bottom: 44px;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 44px 30px;
+}
+.contacts {
+  margin-top: 60px;
+  margin-bottom: 76px;
+}
+.contacts .soc {
   display: flex;
-  justify-content: space-between;
 }
-@media (max-width: 768px) {
-  .feedbackMain {
-    flex-direction: column;
-  }
+.contacts .soc .socLogo {
+  margin-right: 74px;
 }
-.feedback {
-  width: 45%;
+.contacts .soc .socLogo svg {
+  width: 80px;
+  height: 80px;
 }
-@media (max-width: 768px) {
-  .feedback {
-    width: 100%;
-  }
-  .feedback:last-child {
-    display: none;
-  }
+.contacts .soc .socLogo:hover {
+  fill: #FE4444;
+  cursor: pointer;
 }
-.newsMain {
-  display: flex;
-  flex-direction: column;
+.contacts .soc .tgLogo {
+  fill: #00c4ff;
+}
+.contacts .soc .vkLogo {
+  fill: #41adff;
+}
+.contacts .soc .ytLogo {
+  margin-right: 0;
+  fill: red;
 }
 /*# sourceMappingURL=style.css.map */

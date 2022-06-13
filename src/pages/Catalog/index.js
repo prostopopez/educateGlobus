@@ -69,7 +69,7 @@ class CatalogPage extends React.Component {
         const { dataBooks, dataAuthors, dataGenres, dataCollections } = this.state;
 
         return <div className={'catalog'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Каталог`}</h1>
                 <hr/>
                 {dataBooks.length <= 0

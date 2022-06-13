@@ -52,7 +52,7 @@ class AuthorName extends React.Component {
         const {data } = this.state;
 
         return <div className={'aboutAuthor'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 {console.log(data)}
             </div>
         </div>;

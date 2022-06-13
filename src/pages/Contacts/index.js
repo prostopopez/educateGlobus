@@ -15,7 +15,7 @@ class ContactPage extends React.Component {
 
     render() {
         return <div className={'contacts'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Контакты`}</h1>
                 <hr/>
                 <p>«Labrioteka» – современный книжный интернет-ресурс, успешно работающий даже во время

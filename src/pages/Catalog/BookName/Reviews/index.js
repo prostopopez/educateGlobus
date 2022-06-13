@@ -25,7 +25,7 @@ class Reviews extends React.Component {
 
     render() {
         return <div className={'bookReviews'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Отзыв`}</h1>
                 <hr/>
             </div>

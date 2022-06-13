@@ -25,7 +25,7 @@ class BookName extends React.Component {
 
     render() {
         return <div className={'aboutBook'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Книга`}</h1>
                 <hr/>
             </div>

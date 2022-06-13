@@ -1,7 +1,10 @@
 import React from 'react';
+import classnames from 'classnames/bind';
 import {ReactSVG} from "react-svg";
-import  './style.css';
+import style from '../Footer/style.css';
 import '../../style/main.css';
+
+const cn = classnames.bind(style);
 
 const goTo = (e, path) => {
     e.preventDefault();
@@ -10,39 +13,68 @@ const goTo = (e, path) => {
 };
 
 const Footer = (props) => {
-    const { menuItems } = props;
+    const {leftItems, rightItems} = props;
 
     return <footer className={'footer'}>
-        <div className={'footerWrapper'}>
-            <menu>
-                <li>
+        <div className={cn('container', 'footer__cont')}>
+            <ul>
+                {leftItems.map(item => <li>
                     <a
-                        className={'footerLink'}
-                        href="/"
-                        onClick={(e) => goTo(e, `/`)}
-                    >
-                        {`Главная`}
-                    </a>
-                </li>
-                {menuItems.map(item => <li>
-                    <a
-                        onClick={(e) => goTo(e, item.link)}
-                        className={'headfootLink'}
+                        onClick={(e) => {
+                            goTo(e, item.link);
+                        }}
+                        className={'link'}
                         href={item.link}
                     >
-                        {item.name}
+                        {
+                            item.name !== undefined
+                                ? item.name
+                                : <ReactSVG
+                                    src={item.icon}
+                                    beforeInjection={(svg) => {
+                                        svg.classList.add('additional-icon');
+                                    }}
+                                />
+                        }
                     </a>
                 </li>)}
-            </menu>
-            <div className={'footerDescription'}>
-                <ReactSVG
-                    src="../img/bookIcon.svg"
-                    beforeInjection={(svg) => {
-                        svg.classList.add('mainIcon')
-                        svg.setAttribute('style', 'width: 2vw; height: 2vw')
+                <li>
+                    <a onClick={(e) => {
+                        goTo(e, '/');
                     }}
-                />
-                <span>&copy; 2020 Labrioteka</span>
+                       className={'link'}
+                       href={'/'}>
+                        <ReactSVG
+                            src="../img/Main/logo.svg"
+                            beforeInjection={(svg) => {
+                                svg.classList.add('main-icon');
+                            }}
+                        />
+                    </a>
+                </li>
+                {rightItems.map(item => <li>
+                    <a
+                        onClick={(e) => {
+                            goTo(e, item.link);
+                        }}
+                        className={'link'}
+                        href={item.link}
+                    >
+                        {
+                            item.name !== undefined
+                                ? item.name
+                                : <ReactSVG
+                                    src={item.icon}
+                                    beforeInjection={(svg) => {
+                                        svg.classList.add('additional-icon');
+                                    }}
+                                />
+                        }
+                    </a>
+                </li>)}
+            </ul>
+            <div className={'footer__description'}>
+                <span>&copy; 2022 educateGlobus</span>
                 <span>prostopopez</span>
             </div>
         </div>

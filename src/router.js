@@ -1,14 +1,6 @@
 import React from 'react';
 import MainPage from './pages/Main';
 import CatalogPage from './pages/Catalog';
-import BookName from './pages/Catalog/BookName';
-import Reviews from './pages/Catalog/BookName/Reviews'
-import Authors from './pages/Catalog/Authors';
-import AuthorName from './pages/Catalog/Authors/AuthorName';
-import Genres from './pages/Catalog/Genres';
-import GenreName from './pages/Catalog/Genres/GenreName';
-import Collections from './pages/Catalog/Collections';
-import CollectionName from './pages/Catalog/Collections/CollectionName';
 import DeliveryPage from './pages/Delivery';
 import ContactPage from './pages/Contacts';
 import AdminPage from './pages/AdminPage';
@@ -21,19 +13,25 @@ const routes = [
         component: MainPage
     },
     {
-        path: `/catalog`,
+        path: `/user`,
         exact: true,
         title: ``,
         component: CatalogPage
     },
     {
-        path: `/delivery`,
+        path: `/courses`,
+        exact: true,
+        title: ``,
+        component: CatalogPage
+    },
+    {
+        path: `/tests`,
         exact: true,
         title: ``,
         component: DeliveryPage
     },
     {
-        path: `/contacts`,
+        path: `/basket`,
         exact: true,
         title: ``,
         component: ContactPage
@@ -43,54 +41,6 @@ const routes = [
         exact: true,
         title: ``,
         component: AdminPage
-    },
-    {
-        path: `/catalog/book:id`,
-        exact: true,
-        title: ``,
-        component: BookName
-    },
-    {
-        path: `/catalog/book:id/reviews`,
-        exact: true,
-        title: ``,
-        component: Reviews
-    },
-    {
-        path: `/catalog/authors`,
-        exact: true,
-        title: ``,
-        component: Authors
-    },
-    {
-        path: `/catalog/authors/:id`,
-        exact: true,
-        title: ``,
-        component: AuthorName
-    },
-    {
-        path: `/catalog/genres`,
-        exact: true,
-        title: ``,
-        component: Genres
-    },
-    {
-        path: `/catalog/genres/:id`,
-        exact: true,
-        title: ``,
-        component: GenreName
-    },
-    {
-        path: `/catalog/collections`,
-        exact: true,
-        title: ``,
-        component: Collections
-    },
-    {
-        path: `/catalog/collections/:id`,
-        exact: true,
-        title: ``,
-        component: CollectionName
     },
     {
         component: () => <div>

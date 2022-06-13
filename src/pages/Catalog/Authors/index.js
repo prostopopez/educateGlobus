@@ -40,7 +40,7 @@ class Authors extends React.Component {
     render() {
         const { dataAuthors } = this.state;
         return <div className={'authors'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Авторы`}</h1>
                 <hr/>
                 {dataAuthors.length <= 0

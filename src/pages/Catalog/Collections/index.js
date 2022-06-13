@@ -25,7 +25,7 @@ class Collections extends React.Component {
 
     render() {
         return <div className={'collections'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
                 <h1>{`Коллекции`}</h1>
                 <hr/>
             </div>

@@ -4,63 +4,62 @@ import Footer from './components/Footer';
 import './style/main.css';
 
 const menuItems = [
-  {
-    name: `Каталог`,
-    link: `/catalog`
-  },
-  {
-    name: `Авторы`,
-    link: `/catalog/authors`
-  },
-  {
-    name: `Жанры`,
-    link: `/catalog/genres`
-  },
-  {
-    name: `Коллекции`,
-    link: `/catalog/collections`
-  },
-  {
-    name: `Доставка`,
-    link: `/delivery`
-  },
-  {
-    name: `Контакты`,
-    link: `/contacts`
-  },
+    {
+        icon: '../img/Main/user.svg',
+        link: `/user`
+    },
+    {
+        name: `Курсы`,
+        link: `/courses`
+    },
+    {
+        name: `Тесты`,
+        link: `/tests`
+    },
+    {
+        icon: '../img/Main/basket.svg',
+        link: `/basket`
+    },
 ];
 
+const leftItems = menuItems.slice(0, Math.round(menuItems.length / 2));
+const rightItems = menuItems.slice(Math.round(menuItems.length / 2));
+
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      pathname: props.history.location.pathname
-    };
-  }
+        this.state = {
+            pathname: props.history.location.pathname
+        };
+    }
 
-  componentDidMount() {
-    window.h.listen((e) => {
-      this.setState({
-        pathname: e.pathname
-      });
-    });
-  }
+    componentDidMount() {
+        window.h.listen((e) => {
+            this.setState({
+                pathname: e.pathname
+            });
+        });
+    }
 
-  render() {
-    const { pathname } = this.state;
+    render() {
+        const {pathname} = this.state;
 
-    return <React.Fragment>
-      <Header
-          menuItems={menuItems}
-          pathname={pathname}
-      />
-      <main>
-        {this.props.children}
-      </main>
-      <Footer menuItems={menuItems} />
-    </React.Fragment>;
-  }
+        return <React.Fragment>
+            <Header
+                leftItems={leftItems}
+                rightItems={rightItems}
+                pathname={pathname}
+            />
+            <main>
+                {this.props.children}
+            </main>
+            <Footer
+                leftItems={leftItems}
+                rightItems={rightItems}
+            />
+        </React.Fragment>;
+    }
 }
 
 export default App;

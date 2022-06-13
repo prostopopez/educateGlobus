@@ -25,7 +25,7 @@ class GenreName extends React.Component {
 
     render() {
         return <div className={'about'}>
-            <div className={'mainWrapper'}>
+            <div className={'container'}>
             </div>
         </div>;
     }
