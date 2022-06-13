@@ -1,19 +1,15 @@
 import React from 'react';
-import classnames from 'classnames';
-import WatchesItem from '../../components/WatchesItem';
-import GalleryItem from '../../components/GalleryItem';
+import CourseItem from '../../components/CourseItem';
+import TestItem from '../../components/TestItem';
 import '../../style/main.css';
-import style from './style.css';
+import './style.css';
 import {ReactSVG} from "react-svg";
-
-const cn = classnames.bind(style);
 
 class MainPage extends React.Component {
     constructor() {
         super();
 
         this.state = {
-            watches: [],
             courses: [],
             tests: [],
             intervalIsSet: false,
@@ -22,10 +18,8 @@ class MainPage extends React.Component {
 
     componentDidMount() {
         let datas = [
-            this.getDataFromDbBooks,
-            this.getDataFromDbAuthors,
-            this.getDataFromDbGenres,
-            this.getDataFromDbCollections
+            this.getDataFromDbCourses,
+            this.getDataFromDbTests
         ];
 
         for (let i = 0; i < datas.length; i++) {
@@ -45,116 +39,91 @@ class MainPage extends React.Component {
         }
     }
 
-    getDataFromDbBooks = () => {
-        fetch('http://localhost:3001/api/getBooksData')
+    getDataFromDbCourses = () => {
+        fetch('http://localhost:3001/api/getCoursesData')
             .then((data) => data.json())
-            .then((res) => this.setState({dataBooks: res.data}));
+            .then((res) => this.setState({courses: res.data}));
     };
 
-    getDataFromDbAuthors = () => {
-        fetch('http://localhost:3001/api/getAuthorsData')
+    getDataFromDbTests = () => {
+        fetch('http://localhost:3001/api/getTestsData')
             .then((data) => data.json())
-            .then((res) => this.setState({dataAuthors: res.data}));
-    };
-
-    getDataFromDbGenres = () => {
-        fetch('http://localhost:3001/api/getGenresData')
-            .then((data) => data.json())
-            .then((res) => this.setState({dataGenres: res.data}));
-    };
-
-    getDataFromDbCollections = () => {
-        fetch('http://localhost:3001/api/getCollectionsData')
-            .then((data) => data.json())
-            .then((res) => this.setState({dataCollections: res.data}));
+            .then((res) => this.setState({tests: res.data}));
     };
 
     render() {
-        const {watches} = this.state;
+        const {
+            courses,
+            tests
+        } = this.state;
 
-        return <div className={'mainPage'}>
-            <div className={cn('cont', 'aboutUs')}>
-                <h1>keepTime</h1>
-                <p>С часами мы сталкиваемся практически везде: на улице, на работе, дома.</p>
-                <p>Сложно представить нашу жизнь, если бы не были придуманы, часы.</p>
-                <blockquote>“Ни твоя одежда, ни твой почерк, ни твое любимое телешоу не скажут о тебе так много, как
-                    твои часы”
-                </blockquote>
-                <div className={'forButtons'}>
-                    <div className={cn('link', 'whiteLink')}>
-                        <a>Узнать больше</a>
-                    </div>
-                    <div className={cn('link', 'redLink')}>
-                        <a>Посмотреть коллекцию</a>
-                    </div>
-                </div>
+        return <div className={'main-page'}>
+            <div className={'container main-page__about'}>
+                <h1>educateGlobus</h1>
+                <p>Мы сталкиваемся с информационными технологиями каждый день. <br/>
+                    Сложно представить жизнь современного человека без Интернета. <br/>
+                    Наша цель - помочь вам изучить современную IT-профессию.
+                </p>
+                <blockquote>“Не волнуйтесь, если что-то не работает. Если бы всё работало, вас бы уволили.”</blockquote>
+                <button className={'button big red'}>Попробовать курсы для начинающих</button>
             </div>
-            <div className={'watchesBack'}>
-                <img src="../img/watchesBack.png" alt=""/>
+            <div className={'main-page__image'}>
+                <img src="../img/main/hands.png" alt=""/>
             </div>
-            <div className={cn('cont', 'hits')}>
-                <h2>Лучшее</h2>
-                <p className={'subHeading'}>Товары с наивысшим рейтингом за 2020 год</p>
-                <hr/>
+            <div className={'container main-page__new-courses'}>
+                <h2>Последний добавленный курс</h2>
+                <p>Самые актуальные темы в современном IT-сообществе</p>
                 <div className="hitGrid">
-                    {watches.length <= 0
+                    {courses.length <= 0
                         ? 'Нет данных'
-                        : watches.map((item) => {
-                            if (item.rating >= 4.9) {
-                                return <WatchesItem
-                                    name={item.name}
-                                    brand={item.brand}
-                                    material={item.material}
-                                    glass={item.glass}
-                                    mechanism={item.mechanism}
-                                    coating={item.coating}
-                                    price={item.price}
-                                    rating={item.rating}
-                                    img={item.img}
-                                />;
-                            }
-                        })
+                        : <CourseItem
+                            author={courses[0].author}
+                            name={courses[0].name}
+                            topics={courses[0].topics}
+                            time={courses[0].time}
+                            level={courses[0].level}
+                            description={courses[0].description}
+                            rating={courses[0].rating}
+                            img={courses[0].img}
+                            price={courses[0].price}
+                        />
                     }
                 </div>
             </div>
-            <div className={cn('cont', 'gallery')}>
-                <h2>Галерея</h2>
-                <p className={'subHeading'}>Практичность, стиль, качество</p>
-                <hr/>
-                <div className="galleryGrid">
-                    {watches.length <= 0
+            <div className={'container main-page__hardest-tests'}>
+                <h2>Самые сложные тесты</h2>
+                <p>Хотите настоящий челлендж?</p>
+                <div className="main-page__hardest-tests__grid">
+                    {tests.length <= 0
                         ? 'Нет данных'
-                        : watches.map((item) => <GalleryItem
-                                name={item.name}
-                                brand={item.brand}
-                                material={item.material}
-                                glass={item.glass}
-                                mechanism={item.mechanism}
-                                coating={item.coating}
-                                price={item.price}
-                                rating={item.rating}
-                                img={item.img}
-                            />
-                        )}
+                        // находим тесты со сложностью выше 4.5 и берём первые 2
+                        : tests.filter(test => test.difficulty >= 4.5).slice(0, 2).map((item) => <TestItem
+                            difficulty={item.difficulty}
+                            name={item.name}
+                            questions={item.questions}
+                            time={item.time}
+                            img={item.img}
+                        />)
+                    }
                 </div>
-                <div className={cn('link', 'blackLink')}>
+                <div className={'link blackLink'}>
                     <a>Хочу больше</a>
                 </div>
             </div>
-            <div className={cn('cont', 'contacts')}>
+            <div className={'container contacts'}>
                 <h2>Контакты</h2>
                 <div className="soc">
                     <ReactSVG
                         src="../img/ContactsLogos/tgLogo.svg"
-                        className={cn('socLogo', 'tgLogo')}
+                        className={'socLogo tgLogo'}
                     />
                     <ReactSVG
                         src="../img/ContactsLogos/vkLogo.svg"
-                        className={cn('socLogo', 'vkLogo')}
+                        className={'socLogo vkLogo'}
                     />
                     <ReactSVG
                         src="../img/ContactsLogos/ytLogo.svg"
-                        className={cn('socLogo', 'ytLogo')}
+                        className={'socLogo ytLogo'}
                     />
                 </div>
             </div>

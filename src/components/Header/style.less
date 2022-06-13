@@ -1,4 +1,3 @@
-@import url("../../style/variables.less");
 @import url("../../style/main.less");
 
 .header {
@@ -18,12 +17,12 @@
 			width: 40px;
 			height: 5px;
 			border-radius: 5px;
-			background-color: @mainDark;
+			background-color: @main-dark;
 		}
 
 		&.active {
 			span {
-				background-color: @mainLight;
+				background-color: @main-light;
 			}
 
 			span:nth-of-type(1) {
@@ -50,7 +49,7 @@
 		height: 100%;
 
 		ul {
-			margin: 20px 0;
+			margin: 30px 0;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -61,7 +60,7 @@
 
 			li {
 				margin-right: 30px;
-				font-weight: bold;
+				//font-weight: bold;
 
 				&:last-of-type {
 					margin-right: 0;
@@ -71,17 +70,17 @@
 	}
 
 	.link {
-		color: @mainDark;
+		color: @main-dark;
 
 		.additional-icon path {
-			fill: @mainDark;
+			fill: @main-dark;
 		}
 	}
 
 	&.expanded {
 		height: 100vh;
-		background-color: @mainDark;
-		
+		background-color: @main-dark;
+
 		ul {
 			display: flex;
 			flex-direction: column;
@@ -94,10 +93,10 @@
 		}
 
 		.link {
-			color: @mainLight;
+			color: @main-light;
 
 			.additional-icon path {
-				fill: @mainLight;
+				fill: @main-light;
 			}
 		}
 	}

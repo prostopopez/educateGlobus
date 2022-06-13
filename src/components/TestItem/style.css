@@ -1,4 +1,4 @@
-.watchesItem {
+.test-item {
   display: flex;
   flex-direction: column;
   padding: 50px 60px;
@@ -8,16 +8,20 @@
   border-radius: 10px;
   color: black;
 }
-.watchesItem .imgWatch {
+.test-item__name {
+  margin: 15px 0;
+  width: 100%;
+}
+.test-item__img {
   width: 100%;
   height: 319px;
 }
-.watchesItem .imgWatch img {
+.test-item__img img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-.watchesItem .textWatch {
+.test-item__text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,20 +29,16 @@
   line-height: 30px;
   font-weight: bold;
 }
-.watchesItem .textWatch .stars {
+.test-item__text .stars {
   margin: 20px 0 8px 0;
 }
-.watchesItem .textWatch .nameWatch {
-  margin: 15px 0;
-  width: 100%;
-}
-.watchesItem .textWatch .elementWatch {
+.test-item__text__element {
   display: flex;
   justify-content: space-between;
   margin: 2px 0;
   width: 100%;
 }
-.watchesItem .textWatch .priceWatch {
+.test-item__text__goTo {
   margin-top: 25px;
 }
 /*# sourceMappingURL=style.css.map */

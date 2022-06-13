@@ -1,15 +1,17 @@
-@import url("./font.less");
-@import url("./variables.less");
+// imports
+@import url("./font");
+@import url("./variables");
+@import url("./media");
 
-@tablet: (max-width: 1242px);
-@mobile: (max-width: 767px);
-
+// basics
 html,
 body {
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	color: @main-dark;
 }
 
 body {
@@ -30,8 +32,10 @@ body {
 		pointer-events: none;
 	}
 
-	//mozilla-scrollbar
 	* {
+		box-sizing: border-box;
+
+		//mozilla-scrollbar
 		scrollbar-color: rgba(black, 0.1) transparent;
 	}
 
@@ -64,7 +68,6 @@ p, span, table {
 
 .container {
 	margin: 0 auto;
-	padding: 0;
 	width: 1170px;
 	max-width: 1170px;
 
@@ -145,9 +148,74 @@ ul {
 }
 
 img {
-	object-fit: contain;
+	object-fit: cover;
 }
 
+// global tags
+h1,
+h2,
+p,
+blockquote,
+.important {
+	margin: 10px 0;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 80px;
+	line-height: 110%;
+	letter-spacing: 0.2px;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 52px;
+	line-height: 60px;
+	letter-spacing: 0.2px;
+}
+
+p {
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 133%;
+	letter-spacing: 0.2px;
+
+	&.small {
+		font-weight: 300;
+		font-size: 19px;
+		line-height: 137%;
+	}
+}
+
+blockquote {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 150%;
+	letter-spacing: 0.2px;
+}
+
+// font classes
+.important {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 137%;
+
+	&.small {
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 167%;
+		letter-spacing: 0.2px;
+	}
+}
+
+.item {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 150%;
+	letter-spacing: 0.1px;
+}
+
+// icons
 span > svg {
 	width: 100%;
 	height: auto;
@@ -163,15 +231,76 @@ span > svg {
 	height: 44px;
 }
 
+// links
 .link {
 	text-decoration: none;
 
-	&.active,
-	&:hover {
-		color: @mainActive !important;
+	&.simple {
+		color: @main-blue;
 
 		svg path {
-			fill: @mainActive !important;
+			fill: @main-blue;
 		}
+	}
+
+	&.active,
+	&:hover {
+		color: @main-active !important;
+
+		svg path {
+			fill: @main-active !important;
+		}
+	}
+}
+
+// buttons
+.button,
+.tag {
+	box-shadow: @default-shadow;
+
+	// if-rounded
+	&.rounded {
+		border-radius: 10px;
+	}
+
+	// size
+	&.big {
+		padding: 14px 40px;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 125%;
+		letter-spacing: 0.2px;
+	}
+
+	&.small {
+		padding: 10px;
+		font-weight: 400;
+		font-size: 16px;
+		letter-spacing: 0.2px;
+	}
+
+	// color/type
+	&.red {
+		background-color: @main-active;
+		color: @main-light;
+	}
+
+	&.green {
+		background-color: @main-success;
+		color: @main-light;
+	}
+
+	&.blue {
+		border: 1px solid @main-blue;
+		color: @main-blue;
+	}
+
+	&.black {
+		border: 1px solid @main-dark;
+		color: @main-dark;
+	}
+
+	&:hover {
+		filter: hue-rotate(15deg);
 	}
 }

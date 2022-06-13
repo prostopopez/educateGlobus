@@ -1,0 +1,99 @@
+@import '../../style/main';
+
+.course-card {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 10px;
+	border: 3px solid @main-gray;
+	padding: 15px 25px;
+	box-shadow: @default-shadow;
+	background-color: @main-light;
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		margin-right: 36px;
+
+		@media @mobile {
+			justify-content: center;
+		}
+
+		.stars {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 18px;
+			width: 100%;
+			overflow: initial !important;
+
+			@media @mobile {
+				height: 24px;
+			}
+
+			span {
+				z-index: 0;
+				font-size: 44px !important;
+
+				@media @mobile {
+					width: 24px;
+					height: 24px;
+					font-size: 24px !important;
+				}
+			}
+		}
+
+		img {
+			border-radius: 10px;
+			width: 240px;
+			height: 100%;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: left;
+
+		@media @mobile {
+			justify-content: center;
+			text-align: center;
+		}
+
+		.important {
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+
+		.link {
+			margin-bottom: 25px;
+		}
+
+		&__buttons,
+		&__topics,
+		&__params {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 25px;
+
+			div,
+			button {
+				margin-right: 20px;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+
+		&__description {
+			display: -webkit-box;
+			-webkit-line-clamp: 6;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+}

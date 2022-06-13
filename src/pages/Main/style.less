@@ -1,102 +1,90 @@
-@import '../../style/variables';
+@import '../../style/main';
 
-.aboutUs {
-    padding: 60px 0 35px 0;
+.main-page {
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
-    h1 {
-        margin-bottom: 40px;
-    }
+	&__about {
+		padding: 35px 0;
 
-    p {
-        font-size: 30px;
-        text-align: center;
-    }
+		h1 {
+			margin-bottom: 27px;
+		}
 
-    blockquote {
-        margin-bottom: 85px;
-        margin-top: 27px;
-        font-size: 20px;
-    }
+		p {
+			margin-bottom: 27px;
+			text-align: center;
+		}
 
-    .forButtons {
-        display: flex;
-    }
+		blockquote {
+			margin-bottom: 35px;
+		}
+	}
 
-    .link {
-        padding-top: 20px;
-        padding-bottom: 20px;
+	&__image {
+		height: 309px;
 
-        &:first-of-type {
-            margin-right: 35px;
-        }
-    }
-}
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 
-.watchesBack {
-    height: 250px;
+	&__new-courses {
+		padding: 50px 0;
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
+		> p {
+			margin-bottom: 44px;
+		}
+	}
 
-.hits {
-    padding: 50px 0;
+	&__hardest-tests {
+		> p {
+			margin-bottom: 44px;
+		}
 
-    .hitGrid {
-        display: grid;
-        grid-template-columns: repeat(2, 476px);
-        grid-column-gap: 30px;
-    }
-}
-
-.gallery {
-    margin-top: 60px;
-
-    .galleryGrid {
-        margin-bottom: 44px;
-        display: grid;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 44px 30px;
-    }
+		&__grid {
+			display: flex;
+		}
+	}
 }
 
 .contacts {
-    margin-top: 60px;
-    margin-bottom: 76px;
+	margin-top: 60px;
+	margin-bottom: 76px;
 
-    .soc {
-        display: flex;
+	.soc {
+		display: flex;
 
-        .socLogo {
-            margin-right: 74px;
+		.socLogo {
+			margin-right: 74px;
 
-            svg {
-                width: 80px;
-                height: 80px;
-            }
+			svg {
+				width: 80px;
+				height: 80px;
+			}
 
-            &:hover {
-                fill: @mainActive;
-                cursor: pointer;
-            }
-        }
+			&:hover {
+				fill: @main-active;
+				cursor: pointer;
+			}
+		}
 
 
-        .tgLogo {
-            fill: #00c4ff;
-        }
+		.tgLogo {
+			fill: #00c4ff;
+		}
 
-        .vkLogo {
-            fill: #41adff;
-        }
+		.vkLogo {
+			fill: #41adff;
+		}
 
-        .ytLogo {
-            margin-right: 0;
-            fill: red;
-        }
-    }
+		.ytLogo {
+			margin-right: 0;
+			fill: red;
+		}
+	}
 }
