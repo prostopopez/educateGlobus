@@ -6,7 +6,11 @@ const DataSchema = new Schema(
         _id: mongoose.Schema.Types.ObjectId,
         difficulty: Number,
         name: String,
-        questions: [],
+        questions: [{
+            name: String,
+            options: [String],
+            truth: Number
+        }],
         time: String,
         img: String,
     },

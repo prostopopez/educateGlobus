@@ -260,7 +260,6 @@ class AdminPage extends React.Component {
                     <input className={'input'} type={'text'} onChange={(e) => this.setState({
                         test_time: e.target.value
                     })} placeholder={'Время:'} required={true}/>
-
                     <div className={'admin-page__questions'}>
                         <div className={'admin-page__questions__interactive'}>
                             <input className={'input question-name'} type={'text'} placeholder={'Вопрос:'}/>
