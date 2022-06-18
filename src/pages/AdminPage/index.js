@@ -23,7 +23,7 @@ class AdminPage extends React.Component {
             course_id: null,
             course_author: null,
             course_name: null,
-            course_topics: ['gerg'],
+            course_topics: [],
             course_time: null,
             course_level: null,
             course_description: null,
@@ -34,7 +34,7 @@ class AdminPage extends React.Component {
             test_id: null,
             test_difficulty: null,
             test_name: null,
-            test_questions: null,
+            test_questions: [],
             test_time: null,
             test_img: null,
 
@@ -148,9 +148,13 @@ class AdminPage extends React.Component {
     render() {
         const {
             users,
+
             courses,
             course_topics,
+
             tests,
+            test_questions,
+
             isAddingBook,
             isEditingBook,
             isDeletingBook
@@ -231,6 +235,100 @@ class AdminPage extends React.Component {
                             this.state.course_rating,
                             this.state.course_img,
                             this.state.course_price
+                        );
+                    }}>Добавить
+                    </button>
+                    <button className={'button big blue'} onClick={(e) => {
+                        e.preventDefault();
+                    }}>Изменить
+                    </button>
+                    <button className={'button big red'} onClick={(e) => {
+                        e.preventDefault();
+                    }}>Удалить
+                    </button>
+                </form>
+                <h2>Тест</h2>
+                <form>
+                    <input className={'input'} type={'number'} step={'0.1'} min={0.1} max={5}
+                           onChange={(e) => this.setState({
+                               test_id: new mongoose.Types.ObjectId(),
+                               test_difficulty: e.target.value
+                           })} placeholder={'Сложность:'} required={true}/>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        test_name: e.target.value
+                    })} placeholder={'Название:'} required={true}/>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        test_time: e.target.value
+                    })} placeholder={'Время:'} required={true}/>
+
+                    <div className={'admin-page__questions'}>
+                        <div className={'admin-page__questions__interactive'}>
+                            <input className={'input question-name'} type={'text'} placeholder={'Вопрос:'}/>
+                            <input className={'input question-truth'} type={'number'}
+                                   placeholder={'Номер правильного ответа ответа:'}/>
+                            <ul className={'questions-options'}>
+                                <li><input className={'input question-option'} type={'text'}
+                                           placeholder={'Вариант ответа:'} required={true}/></li>
+                            </ul>
+                            <button className={'button small blue'} onClick={(e) => {
+                                e.preventDefault();
+
+                                let options = document.querySelector('.questions-options');
+                                let optionItem = document.createElement("li");
+
+                                optionItem.innerHTML += `<input class='input question-option' type='text' placeholder='Вариант ответа:' required='true'/>`;
+                                options.appendChild(optionItem);
+                            }}>Добавить вариант ответа
+                            </button>
+                        </div>
+                        <button className={'button small green'} onClick={(e) => {
+                            e.preventDefault();
+
+                            let questionOptions = [];
+                            let questionOptionsTags = document.querySelectorAll('.question-option');
+                            for (let i = 0; i < questionOptionsTags.length; i++) {
+                                questionOptions.push(questionOptionsTags[i].value);
+                            }
+
+                            let questionName = document.querySelector('.question-name').value;
+                            let questionTruth = document.querySelector('.question-truth').value;
+
+                            let newQuestion = {
+                                name: questionName,
+                                options: questionOptions,
+                                truth: questionTruth
+                            };
+
+                            test_questions.push(newQuestion);
+
+                            this.setState({
+                                test_questions: test_questions
+                            })
+                        }}>Добавить вопрос
+                        </button>
+                        <div className={'admin-page__topic__grid'}>
+                            {test_questions.length <= 0
+                                ? 'Нет данных'
+                                : test_questions.map(test => {
+                                    return (
+                                        <div className={'tag small blue'}>{test.name}</div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        test_img: e.target.value
+                    })} placeholder={'Ссылка на изображение:'} required={true}/>
+                    <button className={'button big green'} onClick={(e) => {
+                        e.preventDefault();
+                        this.putDataToDbTests(
+                            this.state.test_id,
+                            this.state.test_difficulty,
+                            this.state.test_name,
+                            this.state.test_questions,
+                            this.state.test_time,
+                            this.state.test_img,
                         );
                     }}>Добавить
                     </button>

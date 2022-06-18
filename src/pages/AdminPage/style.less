@@ -1,3 +1,5 @@
+@import "../../style/main";
+
 .admin-page {
 	.container {
 		display: flex;
@@ -29,6 +31,29 @@
 		.tag {
 			margin-right: 10px;
 			margin-bottom: 10px;
+		}
+	}
+
+	&__questions {
+		display: flex;
+		flex-direction: column;
+		border-radius: 10px;
+		border: 3px dotted @main-active;
+		padding: 20px;
+
+		&__interactive {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.questions-options {
+			display: flex;
+			flex-wrap: wrap;
+
+			li {
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
 		}
 	}
 }

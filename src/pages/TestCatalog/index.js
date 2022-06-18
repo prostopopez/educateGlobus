@@ -44,6 +44,10 @@ class TestCatalog extends React.Component {
     render() {
         const {tests} = this.state;
 
+        const {
+            currentUser
+        } = this.props;
+
         return <div className={'test-catalog'}>
             <div className={'container'}>
                 <h1>Каталог тестов</h1>
@@ -53,11 +57,13 @@ class TestCatalog extends React.Component {
                         ? 'Нет данных'
                         : tests.map((item) =>
                             <TestItem
+                                id={item._id}
                                 difficulty={item.difficulty}
                                 name={item.name}
                                 questions={item.questions}
                                 time={item.time}
                                 img={item.img}
+                                currentUser={currentUser}
                             />
                         )
                     }

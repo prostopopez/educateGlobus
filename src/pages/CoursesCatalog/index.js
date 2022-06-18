@@ -44,6 +44,10 @@ class CoursesCatalog extends React.Component {
     render() {
         const {courses} = this.state;
 
+        const {
+            currentUser
+        } = this.props;
+
         return <div className={'courses-catalog'}>
             <div className={'container'}>
                 <h1>Каталог курсов</h1>
@@ -53,6 +57,7 @@ class CoursesCatalog extends React.Component {
                         ? 'Нет данных'
                         : courses.map((item) =>
                             <CourseItem
+                                id={item._id}
                                 author={item.author}
                                 name={item.name}
                                 topics={item.topics}
@@ -62,6 +67,7 @@ class CoursesCatalog extends React.Component {
                                 rating={item.rating}
                                 img={item.img}
                                 price={item.price}
+                                currentUser={currentUser}
                             />
                         )
                     }

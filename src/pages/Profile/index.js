@@ -19,7 +19,7 @@ class ProfilePage extends React.Component {
             username: null,
             password: null,
             isToggleReg: false,
-            intervalIsSet: false,
+            intervalIsSet: false
         };
 
         this.onCheckUser = this.onCheckUser.bind(this);

@@ -54,8 +54,12 @@ class MainPage extends React.Component {
     render() {
         const {
             courses,
-            tests
+            tests,
         } = this.state;
+
+        const {
+            currentUser
+        } = this.props;
 
         return <div className={'main-page'}>
             <div className={'container main-page__about'}>
@@ -77,6 +81,7 @@ class MainPage extends React.Component {
                     {courses.length <= 0
                         ? 'Нет данных'
                         : <CourseItem
+                            id={courses[0]._id}
                             author={courses[0].author}
                             name={courses[0].name}
                             topics={courses[0].topics}
@@ -86,6 +91,7 @@ class MainPage extends React.Component {
                             rating={courses[0].rating}
                             img={courses[0].img}
                             price={courses[0].price}
+                            currentUser={currentUser}
                         />
                     }
                 </div>
@@ -98,11 +104,13 @@ class MainPage extends React.Component {
                         ? 'Нет данных'
                         // находим тесты со сложностью выше 4.5 и берём первые 2
                         : tests.filter(test => test.difficulty >= 4.5).slice(0, 2).map((item) => <TestItem
+                            id={item._id}
                             difficulty={item.difficulty}
                             name={item.name}
                             questions={item.questions}
                             time={item.time}
                             img={item.img}
+                            currentUser={currentUser}
                         />)
                     }
                 </div>

@@ -501,31 +501,31 @@ a.black:hover {
   display: flex;
   flex-wrap: wrap;
 }
-.course-card__right__buttons div,
-.course-card__right__topics div,
-.course-card__right__params div,
-.course-card__right__buttons button,
-.course-card__right__topics button,
-.course-card__right__params button {
+.course-card__right__buttons .tag,
+.course-card__right__topics .tag,
+.course-card__right__params .tag,
+.course-card__right__buttons .button,
+.course-card__right__topics .button,
+.course-card__right__params .button {
   margin-right: 20px;
   margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-  .course-card__right__buttons div,
-  .course-card__right__topics div,
-  .course-card__right__params div,
-  .course-card__right__buttons button,
-  .course-card__right__topics button,
-  .course-card__right__params button {
+  .course-card__right__buttons .tag,
+  .course-card__right__topics .tag,
+  .course-card__right__params .tag,
+  .course-card__right__buttons .button,
+  .course-card__right__topics .button,
+  .course-card__right__params .button {
     margin-bottom: 10px;
   }
 }
-.course-card__right__buttons div:last-of-type,
-.course-card__right__topics div:last-of-type,
-.course-card__right__params div:last-of-type,
-.course-card__right__buttons button:last-of-type,
-.course-card__right__topics button:last-of-type,
-.course-card__right__params button:last-of-type {
+.course-card__right__buttons .tag:last-child,
+.course-card__right__topics .tag:last-child,
+.course-card__right__params .tag:last-child,
+.course-card__right__buttons .button:last-child,
+.course-card__right__topics .button:last-child,
+.course-card__right__params .button:last-child {
   margin-right: 0;
 }
 .course-card__right__description {
