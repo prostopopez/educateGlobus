@@ -367,3 +367,25 @@ a.black:hover {
 	background-color: @main-dark;
 	color: @main-light;
 }
+
+// inputs
+.input {
+	border: 1px solid @main-dark;
+	padding: 10px;
+	font-weight: 400;
+	font-size: 16px;
+	letter-spacing: 0.2px;
+
+	@media @mobile {
+		padding: 5px 10px;
+		font-size: 9px;
+	}
+
+	&:hover {
+		border-color: @main-blue;
+	}
+
+	&:focus {
+		border-color: @main-active;
+	}
+}

@@ -403,6 +403,25 @@ a.black:hover {
   background-color: #181818;
   color: white;
 }
+.input {
+  border: 1px solid #181818;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+@media (max-width: 767px) {
+  .input {
+    padding: 5px 10px;
+    font-size: 9px;
+  }
+}
+.input:hover {
+  border-color: #0066FF;
+}
+.input:focus {
+  border-color: #FE4444;
+}
 .courses-catalog__grid {
   display: flex;
   flex-direction: column;

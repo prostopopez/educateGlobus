@@ -43,7 +43,14 @@ class App extends React.Component {
     }
 
     render() {
-        const {pathname} = this.state;
+        const {
+            pathname,
+        } = this.state;
+
+        const {
+            currentUser,
+            onChangeUser
+        } = this.props;
 
         return <React.Fragment>
             <Header
@@ -52,7 +59,7 @@ class App extends React.Component {
                 pathname={pathname}
             />
             <main>
-                {this.props.children}
+                {React.cloneElement(this.props.children, {currentUser, onChangeUser})}
             </main>
             <Footer
                 leftItems={leftItems}

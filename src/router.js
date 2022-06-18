@@ -1,11 +1,12 @@
 import React from 'react';
 import MainPage from './pages/Main';
-import AdminPage from './pages/AdminPage';
+import ProfilePage from './pages/Profile';
 import CoursesCatalog from './pages/CoursesCatalog';
 import AuthorsCatalog from './pages/CoursesCatalog/Authors';
 import TopicsCatalog from './pages/CoursesCatalog/Topics';
 import TestCatalog from './pages/TestCatalog';
 import TestPage from './pages/TestCatalog/BookName';
+import AdminPage from './pages/AdminPage';
 
 const routes = [
     {
@@ -18,7 +19,7 @@ const routes = [
         path: `/profile`,
         exact: true,
         title: ``,
-        component: AdminPage
+        component: ProfilePage
     },
     {
         path: `/courses`,

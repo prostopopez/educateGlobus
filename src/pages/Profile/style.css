@@ -422,85 +422,42 @@ a.black:hover {
 .input:focus {
   border-color: #FE4444;
 }
-.test-item {
+.profile-page .container.isToggleReg .log-in {
+  display: none;
+}
+.profile-page .container.isToggleReg .reg-in {
   display: flex;
+}
+.profile-page .container .log-in,
+.profile-page .container .reg-in {
   flex-direction: column;
-  border-radius: 10px;
-  padding: 30px 40px;
-  max-width: 476px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
-  color: #181818;
-}
-@media (max-width: 1242px) {
-  .test-item {
-    margin-bottom: 40px;
-    width: 100%;
-  }
-  .test-item:last-of-type {
-    margin-bottom: 0;
-  }
-}
-@media (max-width: 767px) {
-  .test-item {
-    padding: 15px 25px;
-  }
-}
-.test-item__name {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  margin-bottom: 22px !important;
-  text-align: center;
-}
-.test-item__img {
-  width: 100%;
-  height: 300px;
-}
-@media (max-width: 767px) {
-  .test-item__img {
-    height: 200px;
-  }
-}
-.test-item__img img {
-  border-radius: 10px;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
-.test-item__text {
+.profile-page .container .log-in {
+  display: flex;
+}
+.profile-page .container .reg-in {
+  display: none;
+}
+.profile-page .container form {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+.profile-page .container .notLogged,
+.profile-page .container .ifLogged {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-}
-.test-item__text .stars {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
   width: 100%;
-  overflow: initial !important;
+  height: 100%;
 }
-.test-item__text .stars span {
-  z-index: 0;
-  margin-right: 7px;
-  font-size: 53px !important;
-  line-height: 44px;
-}
-@media (max-width: 767px) {
-  .test-item__text .stars span {
-    font-size: 40px !important;
-    line-height: 40px;
-  }
-}
-.test-item__text .stars span:last-of-type {
-  margin-right: 0;
-}
-.test-item__text__element {
-  display: flex;
-  justify-content: space-between;
-  margin: 4px 0;
-  width: 100%;
-}
-.test-item__text__element:last-of-type {
-  margin-bottom: 22px;
+.profile-page .container input,
+.profile-page .container button {
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */

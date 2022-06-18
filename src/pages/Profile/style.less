@@ -1,0 +1,53 @@
+@import '../../style/main';
+
+.profile-page{
+	.container {
+		&.isToggleReg {
+			.log-in {
+				display: none;
+			}
+
+			.reg-in {
+				display: flex;
+			}
+		}
+
+		.log-in,
+		.reg-in {
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		.log-in {
+			display: flex;
+		}
+
+		.reg-in {
+			display: none;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			width: 100%;
+		}
+
+		.notLogged,
+		.ifLogged {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
+
+		input,
+		button {
+			margin-bottom: 20px;
+		}
+	}
+}
