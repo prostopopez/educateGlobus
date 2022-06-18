@@ -1,8 +1,7 @@
 import React from 'react';
 import MainPage from './pages/Main';
-import CatalogPage from './pages/Catalog';
-import DeliveryPage from './pages/Delivery';
-import ContactPage from './pages/Contacts';
+import CoursesCatalog from './pages/Catalog';
+import CoursePage from './pages/Catalog';
 import AdminPage from './pages/AdminPage';
 
 const routes = [
@@ -13,28 +12,28 @@ const routes = [
         component: MainPage
     },
     {
-        path: `/user`,
+        path: `/profile`,
         exact: true,
         title: ``,
-        component: CatalogPage
+        component: AdminPage
     },
     {
         path: `/courses`,
         exact: true,
         title: ``,
-        component: CatalogPage
+        component: CoursesCatalog
+    },
+    {
+        path: `/courses/course:id`,
+        exact: true,
+        title: ``,
+        component: CoursePage
     },
     {
         path: `/tests`,
         exact: true,
         title: ``,
-        component: DeliveryPage
-    },
-    {
-        path: `/basket`,
-        exact: true,
-        title: ``,
-        component: ContactPage
+        component: CoursesCatalog
     },
     {
         path: `/admin`,

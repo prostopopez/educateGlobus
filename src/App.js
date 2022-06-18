@@ -6,7 +6,7 @@ import './style/main.css';
 const menuItems = [
     {
         icon: '../img/Main/user.svg',
-        link: `/user`
+        link: `/profile`
     },
     {
         name: `Курсы`,
@@ -18,7 +18,7 @@ const menuItems = [
     },
     {
         icon: '../img/Main/basket.svg',
-        link: `/basket`
+        link: `/profile`
     },
 ];
 
