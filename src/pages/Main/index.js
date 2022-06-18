@@ -106,24 +106,22 @@ class MainPage extends React.Component {
                         />)
                     }
                 </div>
-                <div className={'link blackLink'}>
-                    <a>Хочу больше</a>
-                </div>
+                <a href={'/'} className={'button big black'}>Хочу больше</a>
             </div>
             <div className={'container contacts'}>
                 <h2>Контакты</h2>
-                <div className="soc">
+                <div className="contacts__soc">
                     <ReactSVG
                         src="../img/ContactsLogos/tgLogo.svg"
-                        className={'socLogo tgLogo'}
+                        className={'contacts__soc__logo tgLogo'}
                     />
                     <ReactSVG
                         src="../img/ContactsLogos/vkLogo.svg"
-                        className={'socLogo vkLogo'}
+                        className={'contacts__soc__logo vkLogo'}
                     />
                     <ReactSVG
-                        src="../img/ContactsLogos/ytLogo.svg"
-                        className={'socLogo ytLogo'}
+                        src="../img/ContactsLogos/fbLogo.svg"
+                        className={'contacts__soc__logo fbLogo'}
                     />
                 </div>
             </div>

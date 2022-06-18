@@ -175,6 +175,9 @@ button {
 button::-moz-focus-inner {
   border: 0;
 }
+a {
+  text-decoration: none;
+}
 ul,
 ol {
   padding-left: 0;
@@ -244,7 +247,7 @@ blockquote {
   letter-spacing: 0.2px;
 }
 .item {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   line-height: 150%;
   letter-spacing: 0.1px;
@@ -325,6 +328,10 @@ span > svg {
 .tag:hover {
   filter: hue-rotate(15deg);
 }
+a.black:hover {
+  background-color: #181818;
+  color: white;
+}
 .main-page .container {
   display: flex;
   flex-direction: column;
@@ -356,38 +363,46 @@ span > svg {
 .main-page__new-courses > p {
   margin-bottom: 44px;
 }
+.main-page__hardest-tests {
+  padding-bottom: 50px;
+}
 .main-page__hardest-tests > p {
   margin-bottom: 44px;
 }
 .main-page__hardest-tests__grid {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 44px;
+  width: 100%;
 }
 .contacts {
-  margin-top: 60px;
-  margin-bottom: 76px;
+  margin-bottom: 76px !important;
 }
-.contacts .soc {
+.contacts h2 {
+  margin-bottom: 46px;
+}
+.contacts__soc {
   display: flex;
 }
-.contacts .soc .socLogo {
+.contacts__soc__logo {
   margin-right: 74px;
 }
-.contacts .soc .socLogo svg {
+.contacts__soc__logo svg {
   width: 80px;
   height: 80px;
 }
-.contacts .soc .socLogo:hover {
+.contacts__soc__logo:hover svg {
   fill: #FE4444;
   cursor: pointer;
 }
-.contacts .soc .tgLogo {
+.contacts__soc__logo.tgLogo {
   fill: #00c4ff;
 }
-.contacts .soc .vkLogo {
-  fill: #41adff;
+.contacts__soc__logo.vkLogo {
+  fill: #4D76A1;
 }
-.contacts .soc .ytLogo {
+.contacts__soc__logo.fbLogo {
   margin-right: 0;
-  fill: red;
+  fill: #0019ad;
 }
 /*# sourceMappingURL=style.css.map */

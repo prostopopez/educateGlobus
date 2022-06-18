@@ -175,6 +175,9 @@ button {
 button::-moz-focus-inner {
   border: 0;
 }
+a {
+  text-decoration: none;
+}
 ul,
 ol {
   padding-left: 0;
@@ -244,7 +247,7 @@ blockquote {
   letter-spacing: 0.2px;
 }
 .item {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   line-height: 150%;
   letter-spacing: 0.1px;
@@ -324,6 +327,10 @@ span > svg {
 .button:hover,
 .tag:hover {
   filter: hue-rotate(15deg);
+}
+a.black:hover {
+  background-color: #181818;
+  color: white;
 }
 .course-card {
   display: flex;

@@ -16,9 +16,10 @@ const TestItem = (props) => {
     return <div className={'test-item'}>
         <p className={'important small test-item__name'}>{name}</p>
         <div className="test-item__img">
-            <img src={img} alt="" />
+            <img src={img} alt=""/>
         </div>
         <div className="test-item__text">
+            <p className={'item'}>Сложность</p>
             <ReactStars
                 edit={false}
                 size={46}
@@ -28,16 +29,14 @@ const TestItem = (props) => {
                 className={'stars'}
             />
             <div className={'test-item__text__element'}>
-                <span>Вопросов</span>
-                <span>{questions.length}</span>
+                <span className={'item'}>Вопросов</span>
+                <span className={'item'}>{questions.length}</span>
             </div>
             <div className={'test-item__text__element'}>
-                <span>Время</span>
-                <span>{time}</span>
+                <span className={'item'}>Время</span>
+                <span className={'item'}>{time}</span>
             </div>
-            <div className={'test-item__text__goTo'}>
-                <a href={'/'}>Пройти тест</a>
-            </div>
+            <a href={'/'} className={'button big red test-item__text__goTo'}>Пройти тест</a>
         </div>
     </div>;
 };

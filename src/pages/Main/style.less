@@ -42,24 +42,32 @@
 	}
 
 	&__hardest-tests {
+		padding-bottom: 50px;
+
 		> p {
 			margin-bottom: 44px;
 		}
 
 		&__grid {
 			display: flex;
+			justify-content: space-between;
+			margin-bottom: 44px;
+			width: 100%;
 		}
 	}
 }
 
 .contacts {
-	margin-top: 60px;
-	margin-bottom: 76px;
+	margin-bottom: 76px !important;
 
-	.soc {
+	h2 {
+		margin-bottom: 46px;
+	}
+
+	&__soc {
 		display: flex;
 
-		.socLogo {
+		&__logo {
 			margin-right: 74px;
 
 			svg {
@@ -67,24 +75,23 @@
 				height: 80px;
 			}
 
-			&:hover {
+			&:hover svg {
 				fill: @main-active;
 				cursor: pointer;
 			}
-		}
 
+			&.tgLogo {
+				fill: #00c4ff;
+			}
 
-		.tgLogo {
-			fill: #00c4ff;
-		}
+			&.vkLogo {
+				fill: #4D76A1;
+			}
 
-		.vkLogo {
-			fill: #41adff;
-		}
-
-		.ytLogo {
-			margin-right: 0;
-			fill: red;
+			&.fbLogo {
+				margin-right: 0;
+				fill: #0019ad;
+			}
 		}
 	}
 }

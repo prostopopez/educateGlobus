@@ -124,6 +124,10 @@ button::-moz-focus-inner {
 	border: 0;
 }
 
+a {
+	text-decoration: none;
+}
+
 ul,
 ol {
 	padding-left: 0;
@@ -209,7 +213,7 @@ blockquote {
 }
 
 .item {
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 20px;
 	line-height: 150%;
 	letter-spacing: 0.1px;
@@ -303,4 +307,9 @@ span > svg {
 	&:hover {
 		filter: hue-rotate(15deg);
 	}
+}
+
+a.black:hover {
+	background-color: @main-dark;
+	color: @main-light;
 }
