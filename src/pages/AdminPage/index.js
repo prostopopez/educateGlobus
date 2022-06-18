@@ -15,21 +15,29 @@ class AdminPage extends React.Component {
         super();
 
         this.state = {
-            dataBooks: [],
-            dataAuthors: [],
-            dataGenres: [],
-            dataCollections: [],
-            book_id: null,
-            bookName: null,
-            bookPrice: null,
-            authorName: null,
-            genreName: null,
-            collectionName: null,
-            bookPublisher: null,
-            bookPubDate: null,
-            bookImg: null,
-            bookDescription: null,
+            users: [],
+            courses: [],
+            tests: [],
             intervalIsSet: false,
+
+            course_id: null,
+            course_author: null,
+            course_name: null,
+            course_topics: ['gerg'],
+            course_time: null,
+            course_level: null,
+            course_description: null,
+            course_rating: 4,
+            course_img: null,
+            course_price: null,
+
+            test_id: null,
+            test_difficulty: null,
+            test_name: null,
+            test_questions: null,
+            test_time: null,
+            test_img: null,
+
             isAddingBook: false,
             isEditingBook: false,
             isDeletingBook: false
@@ -38,10 +46,9 @@ class AdminPage extends React.Component {
 
     componentDidMount() {
         let datas = [
-            this.getDataFromDbBooks,
-            this.getDataFromDbAuthors,
-            this.getDataFromDbGenres,
-            this.getDataFromDbCollections
+            this.getDataFromDbUsers,
+            this.getDataFromDbCourses,
+            this.getDataFromDbTests,
         ];
 
         for (let i = 0; i < datas.length; i++) {
@@ -57,59 +64,73 @@ class AdminPage extends React.Component {
     componentWillUnmount() {
         if (this.state.intervalIsSet) {
             clearInterval(this.state.intervalIsSet);
-            this.setState({ intervalIsSet: null });
+            this.setState({intervalIsSet: null});
         }
     }
 
-    getDataFromDbBooks = () => {
-        fetch('http://localhost:3001/api/getBooksData')
+    getDataFromDbUsers = () => {
+        fetch('http://localhost:3001/api/getUserData')
             .then((data) => data.json())
-            .then((res) => this.setState({ dataBooks: res.data }));
+            .then((res) => this.setState({users: res.data}));
     };
 
-    getDataFromDbAuthors = () => {
-        fetch('http://localhost:3001/api/getAuthorsData')
+    getDataFromDbCourses = () => {
+        fetch('http://localhost:3001/api/getCoursesData')
             .then((data) => data.json())
-            .then((res) => this.setState({ dataAuthors: res.data }));
+            .then((res) => this.setState({courses: res.data}));
     };
 
-    getDataFromDbGenres = () => {
-        fetch('http://localhost:3001/api/getGenresData')
+    getDataFromDbTests = () => {
+        fetch('http://localhost:3001/api/getTestsData')
             .then((data) => data.json())
-            .then((res) => this.setState({ dataGenres: res.data }));
+            .then((res) => this.setState({tests: res.data}));
     };
 
-    getDataFromDbCollections = () => {
-        fetch('http://localhost:3001/api/getCollectionsData')
-            .then((data) => data.json())
-            .then((res) => this.setState({ dataCollections: res.data }));
-    };
-
-    putDataToDbBooks = (
-        book_id,
-        bookName,
-        bookPrice,
-        authorName,
-        genreName,
-        collectionName,
-        bookPublisher,
-        bookPubDate,
-        bookImg,
-        bookDescription
+    putDataToDbCourses = (
+        course_id,
+        course_author,
+        course_name,
+        course_topics,
+        course_time,
+        course_level,
+        course_description,
+        course_rating,
+        course_img,
+        course_price
     ) => {
-
-        axios.post('http://localhost:3001/api/putBooksData', {
-            _id: book_id,
-            bookName: bookName,
-            bookPrice: bookPrice,
-            bookPublisher: bookPublisher,
-            bookPubDate:  bookPubDate,
-            bookImg: bookImg,
-            bookDescription: bookDescription
+        axios.post('http://localhost:3001/api/putCoursesData', {
+            _id: course_id,
+            author: course_author,
+            name: course_name,
+            topics: course_topics,
+            time: course_time,
+            level: course_level,
+            description: course_description,
+            rating: course_rating,
+            img: course_img,
+            price: course_price
         });
-    };
+    }
 
-    updateDbAuthor = (book_id, authorName) => {
+    putDataToDbTests = (
+        test_id,
+        test_difficulty,
+        test_name,
+        test_questions,
+        test_time,
+        test_img,
+    ) => {
+        axios.post('http://localhost:3001/api/putTestsData', {
+            _id: test_id,
+            difficulty: test_difficulty,
+            name: test_name,
+            questions: test_questions,
+            time: test_time,
+            img: test_img,
+        });
+    }
+
+    updateDbUsers = (book_id, authorName) => {
         let objIdToUpdate = null;
         parseInt(authorName);
         this.state.dataAuthors.forEach((dat) => {
@@ -120,80 +141,108 @@ class AdminPage extends React.Component {
 
         axios.post('http://localhost:3001/api/updateAuthorsData', {
             _id: objIdToUpdate,
-            update: { books_id: [book_id] },
+            update: {books_id: [book_id]},
         });
     };
 
     render() {
         const {
-            dataAuthors,
-            dataGenres,
-            dataCollections,
+            users,
+            courses,
+            course_topics,
+            tests,
             isAddingBook,
             isEditingBook,
             isDeletingBook
         } = this.state;
 
-        return <div className={'admin'}>
+        return <div className={'admin-page'}>
             <div className={'container'}>
                 <h1>{`Админ Панель`}</h1>
                 <hr/>
-                <div className={cn('bookBlock', { isAddingBook, isEditingBook, isDeletingBook })}>
-                    <form>
-                        <input type={'text'} onChange={(e) => this.setState({ book_id: new mongoose.Types.ObjectId(), bookName: e.target.value })} placeholder={'Название:'} required={true}/>
-                        <input type={'number'} onChange={(e) => this.setState({ bookPrice: e.target.value })} placeholder={'Цена:'} required={true}/>
-                        {console.log(this.state.book_id)}
-                        <label>
-                            Автор:
-                            <select value={this.state.value} onChange={(e) => this.setState({ genreName: e.target.value })}>
-                                {dataAuthors.map(author => {
-                                        return <option value={author.authorName}>{author.authorName}</option>
-                                    }
-                                )}
-                            </select>
-                        </label>
-                        <label>
-                            Жанр:
-                            <select value={this.state.value} onChange={(e) => this.setState({ genreName: e.target.value })}>
-                                {dataGenres.map(genre => {
-                                        return <option value={genre.genreName}>{genre.genreName}</option>
-                                    }
-                                )}
-                            </select>
-                        </label>
-                        <label>
-                            Коллекция:
-                            <select value={this.state.value} onChange={(e) => this.setState({ genreName: e.target.value })}>
-                                {dataCollections.map(collection => {
-                                        return <option value={collection.collectionName}>{collection.collectionName}</option>
-                                    }
-                                )}
-                            </select>
-                        </label>
-                        <input type={'text'} onChange={(e) => this.setState({ bookPublisher: e.target.value })} placeholder={'Издательство:'} required={true}/>
-                        <input type={'number'} onChange={(e) => this.setState({ bookPubDate: e.target.value })} placeholder={'Год издания:'} required={true}/>
-                        <input type={'text'} onChange={(e) => this.setState({ bookImg: e.target.value })} placeholder={'Обложка:'} required={true}/>
-                        <input type={'text'} onChange={(e) => this.setState({ bookDescription: e.target.value })} placeholder={'Описание:'} required={true}/>
-                        <button onClick={() => {
-                            this.putDataToDbBooks(
-                                this.state.book_id,
-                                this.state.bookName,
-                                this.state.bookPrice,
-                                this.state.authorName,
-                                this.state.genreName,
-                                this.state.collectionName,
-                                this.state.bookPublisher,
-                                this.state.bookPubDate,
-                                this.state.bookImg,
-                                this.state.bookDescription
-                            ); this.updateDbAuthor (
-                                this.state.book_id,
-                                this.state.authorName
-                            )
-                        }}>Добавить книгу</button>
-                    </form>
-                    <button>Вернуться к выбору</button>
-                </div>
+                <h2>Курс</h2>
+                <form>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        course_id: new mongoose.Types.ObjectId(),
+                        course_author: e.target.value
+                    })} placeholder={'Автор:'} required={true}/>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        course_name: e.target.value
+                    })} placeholder={'Название:'} required={true}/>
+                    <input className={'input new-topic'} type={'text'} placeholder={'Введите тему'}/>
+                    <button className={'button small green'} onClick={(e) => {
+                        e.preventDefault();
+
+                        let newTopic = document.querySelector('.new-topic');
+                        if (course_topics.includes(newTopic.value)) {
+                            alert('Такая тема уже есть');
+                        } else {
+                            course_topics.push(newTopic.value);
+                        }
+
+                        this.setState({
+                            course_topics: course_topics
+                        })
+                    }}>Добавить тему:
+                    </button>
+                    <div className={'admin-page__topic__grid'}>
+                        {course_topics.length <= 0
+                            ? 'Нет данных'
+                            : course_topics.map(topic => {
+                                return <div className={'tag small blue'}>{topic}</div>
+                            })
+                        }
+                    </div>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        course_time: e.target.value
+                    })} placeholder={'Время:'} required={true}/>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        course_level: e.target.value
+                    })} placeholder={'Уровень знаний:'} required={true}/>
+                    <textarea
+                        rows="3"
+                        className={'input'}
+                        id="writeText"
+                        name="writeText"
+                        onChange={(e) => {
+                            e.target.style.height = "auto";
+                            e.target.style.height = e.target.scrollHeight + 2 + "px";
+
+                            this.setState({
+                                course_description: e.target.value
+                            })
+                        }} placeholder={'Описание:'}></textarea>
+                    <input className={'input'} type={'text'} onChange={(e) => this.setState({
+                        course_img: e.target.value
+                    })} placeholder={'Ссылка на изображение:'} required={true}/>
+                    <input className={'input'} type={'number'} onChange={(e) => this.setState({
+                        course_price: e.target.value
+                    })} placeholder={'Стоимость:'} required={true}/>
+                    <button className={'button big green'} onClick={(e) => {
+                        e.preventDefault();
+                        this.putDataToDbCourses(
+                            this.state.course_id,
+                            this.state.course_author,
+                            this.state.course_name,
+                            this.state.course_topics,
+                            this.state.course_time,
+                            this.state.course_level,
+                            this.state.course_description,
+                            this.state.course_rating,
+                            this.state.course_img,
+                            this.state.course_price
+                        );
+                    }}>Добавить
+                    </button>
+                    <button className={'button big blue'} onClick={(e) => {
+                        e.preventDefault();
+                    }}>Изменить
+                    </button>
+                    <button className={'button big red'} onClick={(e) => {
+                        e.preventDefault();
+                    }}>Удалить
+                    </button>
+                </form>
             </div>
         </div>
 

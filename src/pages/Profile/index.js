@@ -12,7 +12,7 @@ class ProfilePage extends React.Component {
         super();
 
         this.state = {
-            dataUsers: [],
+            users: [],
             dataCourses: [],
             dataTests: [],
             id: 0,
@@ -52,11 +52,11 @@ class ProfilePage extends React.Component {
     getDataFromDbUsers = () => {
         fetch('http://localhost:3001/api/getUserData')
             .then((data) => data.json())
-            .then((res) => this.setState({dataUsers: res.data}));
+            .then((res) => this.setState({users: res.data}));
     };
 
     putDataToDbUsers = (username, password) => {
-        let currentIds = this.state.dataUsers.map((data) => data.id);
+        let currentIds = this.state.users.map((data) => data.id);
         let idToBeAdded = 0;
         while (currentIds.includes(idToBeAdded)) {
             ++idToBeAdded;
@@ -78,10 +78,10 @@ class ProfilePage extends React.Component {
     onCheckUser = (e, username, password) => {
         e.preventDefault();
 
-        const {dataUsers} = this.state;
+        const {users} = this.state;
         let logged = false;
 
-        const isUserCorrect = dataUsers.map(singleData => {
+        const isUserCorrect = users.map(singleData => {
             if (singleData.username == username && singleData.password == password) {
                 return [true, singleData.username];
             }
@@ -92,9 +92,6 @@ class ProfilePage extends React.Component {
                 logged = true;
                 alert(`Вы вошли под псевдонимом ${username}`);
                 this.props.onChangeUser(username);
-                this.setState({
-                    isModalOpen: false
-                });
             }
         })
 
@@ -119,10 +116,10 @@ class ProfilePage extends React.Component {
             .then((res) => this.setState({dataTests: res.data}));
     };
 
-    updateDbUsers = (course_id, currentUser) => {
+    removeCourseFromUsers = (course_id, currentUser) => {
         let objIdToUpdate = null;
         parseInt(currentUser);
-        this.state.dataUsers.forEach((dat) => {
+        this.state.users.forEach((dat) => {
             if (dat.username == currentUser) {
                 objIdToUpdate = dat._id;
             }
@@ -130,14 +127,33 @@ class ProfilePage extends React.Component {
 
         axios.post('http://localhost:3001/api/updateUserData', {
             _id: objIdToUpdate,
-            update: {$push: {courses_id: [course_id]}},
+            update: {$pull: {courses_id: course_id}},
         });
+
+        window.location.reload();
+    };
+
+    removeTestFromUsers = (test_id, currentUser) => {
+        let objIdToUpdate = null;
+        parseInt(currentUser);
+        this.state.users.forEach((dat) => {
+            if (dat.username == currentUser) {
+                objIdToUpdate = dat._id;
+            }
+        });
+
+        axios.post('http://localhost:3001/api/updateUserData', {
+            _id: objIdToUpdate,
+            update: {$pull: {tests_progress: {id: test_id}}},
+        });
+
+        window.location.reload();
     };
 
     render() {
         const {
             isToggleReg,
-            dataUsers,
+            users,
             dataCourses,
             dataTests
         } = this.state;
@@ -195,7 +211,7 @@ class ProfilePage extends React.Component {
                 <p className="important">Курсы:</p>
                 <div className={'profile-page__basket'}>
                     {dataCourses.map(course =>
-                        dataUsers.map(user => {
+                        users.map(user => {
                             if (user.username == currentUser && user.courses_id.includes(course._id)) {
                                 return (
                                     <div className={'profile-page__added'}>
@@ -208,12 +224,12 @@ class ProfilePage extends React.Component {
                                                 </div>
                                                 <div className={'profile-page__added__item__between'}>
                                                     <p className={'important property'}>Цена:</p>
-                                                    <p className={'important value'}>{course.price}</p>
+                                                    <p className={'important value'}>{course.price} руб.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <button className={'button big red'} onClick={() => {
-                                            this.updateDbUsers(
+                                            this.removeCourseFromUsers(
                                                 course._id,
                                                 currentUser
                                             )
@@ -228,7 +244,7 @@ class ProfilePage extends React.Component {
                 <p className="important">Тесты:</p>
                 <div className={'profile-page__tests'}>
                     {dataTests.map(test =>
-                        dataUsers.map(user => user.tests_progress.map(finishedTest => {
+                        users.map(user => user.tests_progress.map(finishedTest => {
                                 if (user.username == currentUser && finishedTest.id == test._id) {
                                     return (
                                         <div className={'profile-page__added'}>
@@ -249,7 +265,12 @@ class ProfilePage extends React.Component {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button className={'button big red'}>Удалить
+                                            <button className={'button big red'} onClick={() => {
+                                                this.removeTestFromUsers(
+                                                    finishedTest._id,
+                                                    currentUser
+                                                )
+                                            }}>Удалить
                                             </button>
                                         </div>
                                     );

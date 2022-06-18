@@ -1,29 +1,28 @@
-.bookBlock form,
-.bookBlock label {
+.admin-page .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.bookBlock input,
-.bookBlock button,
-.bookBlock select {
-  margin-top: 1.5vw;
-  width: 30vw;
-  height: 2vw;
+.admin-page form {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+  width: 100%;
 }
-.bookBlock button {
-  border: none;
-  border-radius: 5px;
-  font-size: 1vw;
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.4s ease 0s;
-  background: limegreen;
-  height: 2vw;
+.admin-page form input,
+.admin-page form button,
+.admin-page form textarea {
+  margin-bottom: 10px;
 }
-.bookBlock label select {
-  margin-top: 0;
+.admin-page form div {
+  margin-bottom: 20px;
+}
+.admin-page__topic__grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.admin-page__topic__grid .tag {
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */

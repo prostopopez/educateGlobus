@@ -35,7 +35,7 @@ const BookShelf = (props) => {
             <a className={'important link simple'} href={`/`}>{author}</a>
             <div className={'course-card__right__buttons'}>
                 <button className={'button rounded small red'}>В корзину</button>
-                <button className={'button rounded small green'}>Подробнее</button>
+                <a href={'/courses'} className={'button rounded small green'}>Подробнее</a>
             </div>
             <div className={'course-card__right__topics'}>
                 {topics.length <= 0
