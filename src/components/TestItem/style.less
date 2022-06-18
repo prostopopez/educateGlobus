@@ -9,6 +9,19 @@
 	box-shadow: @default-shadow;
 	color: @main-dark;
 
+	@media @tablet {
+		margin-bottom: 40px;
+		width: 100%;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	@media @mobile {
+		padding: 15px 25px;
+	}
+
 	&__name {
 		display: -webkit-box;
 		-webkit-line-clamp: 3;
@@ -21,6 +34,10 @@
 	&__img {
 		width: 100%;
 		height: 300px;
+
+		@media @mobile {
+			height: 200px;
+		}
 
 		img {
 			border-radius: 10px;
@@ -41,10 +58,6 @@
 			width: 100%;
 			overflow: initial !important;
 
-			@media @mobile {
-				height: 24px;
-			}
-
 			span {
 				z-index: 0;
 				margin-right: 7px;
@@ -52,9 +65,8 @@
 				line-height: 44px;
 
 				@media @mobile {
-					width: 24px;
-					height: 24px;
-					font-size: 24px !important;
+					font-size: 40px !important;
+					line-height: 40px;
 				}
 
 				&:last-of-type {
@@ -69,13 +81,9 @@
 			margin: 4px 0;
 			width: 100%;
 
-			&:last-of-type{
+			&:last-of-type {
 				margin-bottom: 22px;
 			}
-		}
-
-		&__goTo {
-
 		}
 	}
 }

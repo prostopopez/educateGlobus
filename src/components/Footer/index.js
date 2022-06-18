@@ -74,8 +74,8 @@ const Footer = (props) => {
                 </li>)}
             </ul>
             <div className={'footer__description'}>
-                <span>&copy; 2022 educateGlobus</span>
-                <span>prostopopez</span>
+                <span className={'important'}>&copy; 2022 educateGlobus</span>
+                <span className={'important'}>prostopopez</span>
             </div>
         </div>
     </footer>;

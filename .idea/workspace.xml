@@ -6,17 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="98b88db5-44eb-414c-8c79-b7df25e2b8d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/watchesBack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/ContactsLogos/ytLogo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseItem/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseItem/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CourseItem/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseItem/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CourseItem/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CourseItem/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/style.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TestItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/style.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TestItem/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestItem/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TestItem/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestItem/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TestItem/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestItem/style.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Main/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Main/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Main/style.less" afterDir="false" />
@@ -163,7 +166,7 @@
       <workItem from="1655104939041" duration="23400000" />
       <workItem from="1655133404093" duration="704000" />
       <workItem from="1655183033515" duration="73000" />
-      <workItem from="1655538133977" duration="3838000" />
+      <workItem from="1655538133977" duration="5814000" />
     </task>
     <servers />
   </component>
