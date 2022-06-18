@@ -231,6 +231,9 @@ h1 {
     font-size: 45px;
   }
 }
+h1 + hr {
+  margin-bottom: 50px;
+}
 h2 {
   font-weight: 400;
   font-size: 52px;

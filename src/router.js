@@ -1,8 +1,11 @@
 import React from 'react';
 import MainPage from './pages/Main';
-import CoursesCatalog from './pages/Catalog';
-import CoursePage from './pages/Catalog';
 import AdminPage from './pages/AdminPage';
+import CoursesCatalog from './pages/CoursesCatalog';
+import AuthorsCatalog from './pages/CoursesCatalog/Authors';
+import TopicsCatalog from './pages/CoursesCatalog/Topics';
+import TestCatalog from './pages/TestCatalog';
+import TestPage from './pages/TestCatalog/BookName';
 
 const routes = [
     {
@@ -24,16 +27,28 @@ const routes = [
         component: CoursesCatalog
     },
     {
-        path: `/courses/course:id`,
+        path: `/courses/authors`,
         exact: true,
         title: ``,
-        component: CoursePage
+        component: AuthorsCatalog
+    },
+    {
+        path: `/courses/topics`,
+        exact: true,
+        title: ``,
+        component: TopicsCatalog
     },
     {
         path: `/tests`,
         exact: true,
         title: ``,
-        component: CoursesCatalog
+        component: TestCatalog
+    },
+    {
+        path: `/tests/test:id`,
+        exact: true,
+        title: ``,
+        component: TestPage
     },
     {
         path: `/admin`,

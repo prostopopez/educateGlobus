@@ -403,55 +403,21 @@ a.black:hover {
   background-color: #181818;
   color: white;
 }
-.footer {
-  padding: 30px 0;
-  background-color: #181818;
-  color: white;
+.test-catalog {
+  margin-bottom: 40px;
 }
-.footer__cont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.test-catalog__grid {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 476px);
+  grid-gap: 40px;
 }
-.footer__cont ul {
-  margin: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 767px) {
-  .footer__cont ul {
-    flex-direction: column;
+@media (max-width: 1242px) {
+  .test-catalog__grid {
+    grid-template-columns: 100%;
   }
 }
-.footer__cont ul li {
-  margin-right: 30px;
-  font-weight: bold;
-}
-@media (max-width: 767px) {
-  .footer__cont ul li {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-}
-.footer__cont ul li:last-of-type {
-  margin-right: 0;
-}
-@media (max-width: 767px) {
-  .footer__cont ul li:last-of-type {
-    margin-bottom: 0;
-  }
-}
-.footer__cont ul li .link {
-  color: white;
-}
-.footer__cont ul li .link svg path {
-  fill: white;
-  stroke: #181818;
-}
-.footer__description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.test-catalog__grid .test-item {
+  max-width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

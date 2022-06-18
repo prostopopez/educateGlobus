@@ -403,55 +403,11 @@ a.black:hover {
   background-color: #181818;
   color: white;
 }
-.footer {
-  padding: 30px 0;
-  background-color: #181818;
-  color: white;
-}
-.footer__cont {
+.courses-catalog__grid {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
-.footer__cont ul {
-  margin: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 767px) {
-  .footer__cont ul {
-    flex-direction: column;
-  }
-}
-.footer__cont ul li {
-  margin-right: 30px;
-  font-weight: bold;
-}
-@media (max-width: 767px) {
-  .footer__cont ul li {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-}
-.footer__cont ul li:last-of-type {
-  margin-right: 0;
-}
-@media (max-width: 767px) {
-  .footer__cont ul li:last-of-type {
-    margin-bottom: 0;
-  }
-}
-.footer__cont ul li .link {
-  color: white;
-}
-.footer__cont ul li .link svg path {
-  fill: white;
-  stroke: #181818;
-}
-.footer__description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.courses-catalog__grid .course-card {
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=style.css.map */
