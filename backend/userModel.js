@@ -6,9 +6,13 @@ const User = new Schema(
         id: Number,
         username: String,
         password: String,
-        promos_id: [mongoose.Schema.Types.ObjectId]
+        courses_id: [mongoose.Schema.Types.ObjectId],
+        tests_progress: [{
+            id: mongoose.Schema.Types.ObjectId,
+            success: Number
+        }]
     },
-    { timestamps: false }
+    {timestamps: false}
 );
 
 module.exports = mongoose.model('users', User);

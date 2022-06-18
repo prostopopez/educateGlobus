@@ -1,6 +1,6 @@
 @import '../../style/main';
 
-.profile-page{
+.profile-page {
 	.container {
 		&.isToggleReg {
 			.log-in {
@@ -48,6 +48,49 @@
 		input,
 		button {
 			margin-bottom: 20px;
+		}
+	}
+
+	&__added {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 40px;
+
+		&__item {
+			display: flex;
+			margin-bottom: 20px;
+			border-radius: 10px;
+			padding: 10px;
+			box-shadow: @default-shadow;
+			background-color: @main-wheat;
+
+			img {
+				margin-right: 20px;
+				border-radius: 10px;
+				width: 200px;
+			}
+
+			&__between {
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid @main-gray;
+
+				&:last-of-type {
+					border: none;
+				}
+			}
+
+			.property {
+				margin-right: 10px;
+			}
+
+			.value {
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
 		}
 	}
 }

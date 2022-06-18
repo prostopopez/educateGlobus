@@ -13,6 +13,8 @@ class ProfilePage extends React.Component {
 
         this.state = {
             dataUsers: [],
+            dataCourses: [],
+            dataTests: [],
             id: 0,
             username: null,
             password: null,
@@ -25,7 +27,9 @@ class ProfilePage extends React.Component {
 
     componentDidMount() {
         let datas = [
-            this.getDataFromDbUsers
+            this.getDataFromDbUsers,
+            this.getDataFromDbCourses,
+            this.getDataFromDbTests
         ];
 
         for (let i = 0; i < datas.length; i++) {
@@ -103,9 +107,39 @@ class ProfilePage extends React.Component {
         this.props.onChangeUser(null);
     }
 
+    getDataFromDbCourses = () => {
+        fetch('http://localhost:3001/api/getCoursesData')
+            .then((data) => data.json())
+            .then((res) => this.setState({dataCourses: res.data}));
+    };
+
+    getDataFromDbTests = () => {
+        fetch('http://localhost:3001/api/getTestsData')
+            .then((data) => data.json())
+            .then((res) => this.setState({dataTests: res.data}));
+    };
+
+    updateDbUsers = (course_id, currentUser) => {
+        let objIdToUpdate = null;
+        parseInt(currentUser);
+        this.state.dataUsers.forEach((dat) => {
+            if (dat.username == currentUser) {
+                objIdToUpdate = dat._id;
+            }
+        });
+
+        axios.post('http://localhost:3001/api/updateUserData', {
+            _id: objIdToUpdate,
+            update: {$push: {courses_id: [course_id]}},
+        });
+    };
+
     render() {
         const {
-            isToggleReg
+            isToggleReg,
+            dataUsers,
+            dataCourses,
+            dataTests
         } = this.state;
 
         const {
@@ -157,6 +191,72 @@ class ProfilePage extends React.Component {
                     </form>
                     <button onClick={() => this.toggleReg(false)} className={'button big red'}>Вернуться к авторизации
                     </button>
+                </div>
+                <p className="important">Курсы:</p>
+                <div className={'profile-page__basket'}>
+                    {dataCourses.map(course =>
+                        dataUsers.map(user => {
+                            if (user.username == currentUser && user.courses_id.includes(course._id)) {
+                                return (
+                                    <div className={'profile-page__added'}>
+                                        <div className={'profile-page__added__item'}>
+                                            <img src={course.img} alt=""/>
+                                            <div className={'profile-page__added__item__cont'}>
+                                                <div className={'profile-page__added__item__between'}>
+                                                    <p className={'important property'}>Название:</p>
+                                                    <p className={'important small value'}>{course.name}</p>
+                                                </div>
+                                                <div className={'profile-page__added__item__between'}>
+                                                    <p className={'important property'}>Цена:</p>
+                                                    <p className={'important value'}>{course.price}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button className={'button big red'} onClick={() => {
+                                            this.updateDbUsers(
+                                                course._id,
+                                                currentUser
+                                            )
+                                        }}>Удалить
+                                        </button>
+                                    </div>
+                                );
+                            }
+                        })
+                    )}
+                </div>
+                <p className="important">Тесты:</p>
+                <div className={'profile-page__tests'}>
+                    {dataTests.map(test =>
+                        dataUsers.map(user => user.tests_progress.map(finishedTest => {
+                                if (user.username == currentUser && finishedTest.id == test._id) {
+                                    return (
+                                        <div className={'profile-page__added'}>
+                                            <div className={'profile-page__added__item'}>
+                                                <img src={test.img} alt=""/>
+                                                <div className={'profile-page__added__item__cont'}>
+                                                    <div className={'profile-page__added__item__between'}>
+                                                        <p className={'important property'}>Название:</p>
+                                                        <p className={'important small value'}>{test.name}</p>
+                                                    </div>
+                                                    <div className={'profile-page__added__item__between'}>
+                                                        <p className={'important property'}>Сложность:</p>
+                                                        <p className={'important value'}>{test.difficulty}</p>
+                                                    </div>
+                                                    <div className={'profile-page__added__item__between'}>
+                                                        <p className={'important property'}>Набрано баллов:</p>
+                                                        <p className={'important value'}>{finishedTest.success}/100</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button className={'button big red'}>Удалить
+                                            </button>
+                                        </div>
+                                    );
+                                }
+                            })
+                        )
+                    )}
                 </div>
             </div>
         </div>;

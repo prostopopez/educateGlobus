@@ -6,7 +6,6 @@ const logger = require('morgan');
 const {crypto} = require('crypto');
 const coursesData = require('./getCoursesData');
 const testsData = require('./getTestsData');
-const promoData = require('./getPromoData');
 const userData = require('./userModel');
 
 const API_PORT = 3001;
@@ -44,7 +43,6 @@ router.delete('/deleteCoursesData', (req, res) => {
         return res.json({success: true});
     });
 });
-
 
 router.post('/putCoursesData', (req, res) => {
     let data = new coursesData();
@@ -109,7 +107,6 @@ router.delete('/deleteTestsData', (req, res) => {
     });
 });
 
-
 router.post('/putTestsData', (req, res) => {
     let data = new testsData();
 
@@ -145,38 +142,7 @@ router.post('/putTestsData', (req, res) => {
     });
 });
 
-// промо
-router.get('/getPromoData', (req, res) => {
-    promoData.find((err, data) => {
-        if (err) return res.json({success: false, error: err});
-        return res.json({success: true, data: data});
-    });
-});
-
-router.post('/putPromoData', (req, res) => {
-    let data = new promoData();
-
-    const {
-        _id,
-        promoCode
-    } = req.body;
-
-    if ((!_id && _id !== 0)
-        || !promoCode) {
-
-        return res.json({
-            success: false,
-            error: 'INVALID INPUTS',
-        });
-    }
-    data.promoCode = promoCode;
-    data._id = _id;
-    data.save((err) => {
-        if (err) return res.json({success: false, error: err});
-        return res.json({success: true});
-    });
-});
-
+// пользователи
 router.get('/getUserData', (req, res) => {
     userData.find((err, data) => {
         if (err) return res.json({success: false, error: err});
@@ -209,7 +175,8 @@ router.post('/putUserData', (req, res) => {
     }
     data.username = username;
     data.password = password;
-    data.promos_id = [];
+    data.courses_id = [];
+    data.tests_progress = [];
     data.id = id;
     data.save((err) => {
         if (err) return res.json({success: false, error: err});

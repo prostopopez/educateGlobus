@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const DataSchema = new Schema(
     {
         _id: mongoose.Schema.Types.ObjectId,
-        difficulty: String,
+        difficulty: Number,
         name: String,
         questions: [],
         time: String,
