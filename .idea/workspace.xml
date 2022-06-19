@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="98b88db5-44eb-414c-8c79-b7df25e2b8d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/userModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TestItem/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestItem/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TestItem/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestItem/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TestItem/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestItem/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdminPage/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdminPage/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Profile/style.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Profile/style.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TestCatalog/TestPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TestCatalog/TestPage/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +160,7 @@
       <workItem from="1655133404093" duration="704000" />
       <workItem from="1655183033515" duration="73000" />
       <workItem from="1655538133977" duration="32404000" />
-      <workItem from="1655622583864" duration="8996000" />
+      <workItem from="1655622583864" duration="12154000" />
     </task>
     <servers />
   </component>

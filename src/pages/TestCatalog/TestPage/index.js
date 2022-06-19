@@ -66,7 +66,7 @@ class TestPage extends React.Component {
             }
         }
 
-        let success = (points / fullPoints) * 100;
+        let success = Math.floor((points / fullPoints) * 100);
         alert(`Вы набрали ${success} баллов!`);
 
         let objIdToUpdate = null;

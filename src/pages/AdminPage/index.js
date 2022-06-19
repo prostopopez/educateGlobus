@@ -110,6 +110,8 @@ class AdminPage extends React.Component {
             img: course_img,
             price: course_price
         });
+
+        window.location.reload();
     }
 
     putDataToDbTests = (
@@ -128,22 +130,9 @@ class AdminPage extends React.Component {
             time: test_time,
             img: test_img,
         });
+
+        window.location.reload();
     }
-
-    updateDbUsers = (book_id, authorName) => {
-        let objIdToUpdate = null;
-        parseInt(authorName);
-        this.state.dataAuthors.forEach((dat) => {
-            if (dat.authorName == authorName) {
-                objIdToUpdate = dat._id;
-            }
-        });
-
-        axios.post('http://localhost:3001/api/updateAuthorsData', {
-            _id: objIdToUpdate,
-            update: {books_id: [book_id]},
-        });
-    };
 
     render() {
         const {
@@ -278,6 +267,13 @@ class AdminPage extends React.Component {
                                 optionItem.innerHTML += `<input class='input question-option' type='text' placeholder='Вариант ответа:' required='true'/>`;
                                 options.appendChild(optionItem);
                             }}>Добавить вариант ответа
+                            </button>
+                            <button className={'button small red'} onClick={(e) => {
+                                e.preventDefault();
+
+                                let options = document.querySelector('.questions-options');
+                                options.removeChild(options.lastElementChild);
+                            }}>Удалить вариант ответа
                             </button>
                         </div>
                         <button className={'button small green'} onClick={(e) => {
