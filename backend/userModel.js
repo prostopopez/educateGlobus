@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const User = new Schema(
     {
-        _id: mongoose.Schema.Types.ObjectId,
+        id: Number,
         username: String,
         password: String,
         courses_id: [mongoose.Schema.Types.ObjectId],
         tests_progress: [{
-            id: mongoose.Schema.Types.ObjectId,
+            _id: mongoose.Schema.Types.ObjectId,
             success: Number
         }]
     },

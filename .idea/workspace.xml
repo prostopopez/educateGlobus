@@ -6,47 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="98b88db5-44eb-414c-8c79-b7df25e2b8d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/AuthorName/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/AuthorName/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/AuthorName/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/AuthorName/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Authors/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/Reviews/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/Reviews/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/Reviews/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/Reviews/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/BookName/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/CollectionName/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/CollectionName/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/CollectionName/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/CollectionName/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Collections/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/GenreName/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/GenreName/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/GenreName/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/GenreName/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Genres/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/AuthorName/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/AuthorName/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/AuthorName/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/AuthorName/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/style.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CoursesCatalog/Topics/style.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/userModel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +150,7 @@
       <workItem from="1655133404093" duration="704000" />
       <workItem from="1655183033515" duration="73000" />
       <workItem from="1655538133977" duration="32404000" />
-      <workItem from="1655622583864" duration="8279000" />
+      <workItem from="1655622583864" duration="8996000" />
     </task>
     <servers />
   </component>
