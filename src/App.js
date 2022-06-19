@@ -59,7 +59,7 @@ class App extends React.Component {
                 pathname={pathname}
             />
             <main>
-                {React.cloneElement(this.props.children, {currentUser, onChangeUser})}
+                {React.cloneElement(this.props.children, {currentUser, onChangeUser, pathname})}
             </main>
             <Footer
                 leftItems={leftItems}

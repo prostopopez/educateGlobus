@@ -3,12 +3,6 @@ import './style.css';
 import '../../style/main.css';
 import axios from 'axios';
 import mongoose from 'mongoose';
-import srs from 'secure-random-string';
-import classnames from 'classnames/bind';
-import style from "../../components/Header/style.css";
-import styleMain from "../../style/main.css";
-
-const cn = classnames.bind(style, styleMain);
 
 class AdminPage extends React.Component {
     constructor() {

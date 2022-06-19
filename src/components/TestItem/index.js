@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import ReactStars from 'react-stars/dist/react-stars';
 import style from './style.css';
 import '../../style/main.css';

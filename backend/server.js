@@ -36,6 +36,14 @@ router.get('/getCoursesData', (req, res) => {
     });
 });
 
+router.post('/updateCoursesData', (req, res) => {
+    const {_id, update} = req.body;
+    coursesData.findByIdAndUpdate(_id, update, (err) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true});
+    });
+});
+
 router.delete('/deleteCoursesData', (req, res) => {
     const {_id} = req.body;
     coursesData.findByIdAndRemove(_id, (err) => {
@@ -96,6 +104,14 @@ router.get('/getTestsData', (req, res) => {
     testsData.find((err, data) => {
         if (err) return res.json({success: false, error: err});
         return res.json({success: true, data: data});
+    });
+});
+
+router.post('/updateTestsData', (req, res) => {
+    const {_id, update} = req.body;
+    testsData.findByIdAndUpdate(_id, update, (err) => {
+        if (err) return res.json({success: false, error: err});
+        return res.json({success: true});
     });
 });
 
