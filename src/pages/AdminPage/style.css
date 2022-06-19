@@ -441,7 +441,7 @@ a.black:hover {
 }
 @media (max-width: 767px) {
   .admin-page form {
-    min-width: initialgit;
+    min-width: initial;
   }
 }
 .admin-page form input,

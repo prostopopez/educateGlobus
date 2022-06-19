@@ -247,7 +247,7 @@ class AdminPage extends React.Component {
                         <div className={'admin-page__questions__interactive'}>
                             <input className={'input question-name'} type={'text'} placeholder={'Вопрос:'}/>
                             <input className={'input question-truth'} type={'number'}
-                                   placeholder={'Номер правильного ответа ответа:'}/>
+                                   placeholder={'Номер правильного варианта ответа:'}/>
                             <ul className={'questions-options'}>
                                 <li><input className={'input question-option'} type={'text'}
                                            placeholder={'Вариант ответа:'} required={true}/></li>

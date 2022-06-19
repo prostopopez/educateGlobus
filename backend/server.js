@@ -180,7 +180,7 @@ router.post('/putUserData', (req, res) => {
     const {
         id,
         username,
-        password
+        password,
     } = req.body;
 
     if ((!id && id !== 0) || !username || !password) {
