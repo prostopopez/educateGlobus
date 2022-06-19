@@ -38,9 +38,9 @@ class AdminPage extends React.Component {
             test_time: null,
             test_img: null,
 
-            isAddingBook: false,
-            isEditingBook: false,
-            isDeletingBook: false
+            isAdding: false,
+            isEditing: false,
+            isDeleting: false
         };
     }
 
@@ -155,9 +155,9 @@ class AdminPage extends React.Component {
             tests,
             test_questions,
 
-            isAddingBook,
-            isEditingBook,
-            isDeletingBook
+            isAdding,
+            isEditing,
+            isDeleting
         } = this.state;
 
         return <div className={'admin-page'}>

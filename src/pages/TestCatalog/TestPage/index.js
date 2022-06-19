@@ -79,7 +79,7 @@ class TestPage extends React.Component {
 
         axios.post('http://localhost:3001/api/updateUserData', {
             _id: objIdToUpdate,
-            update: {$push: {tests_progress: {id: currentTest._id, success: success}}},
+            update: {$push: {tests_progress: {_id: currentTest._id, success: success}}},
         });
     }
 

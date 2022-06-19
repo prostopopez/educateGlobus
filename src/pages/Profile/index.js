@@ -144,7 +144,7 @@ class ProfilePage extends React.Component {
 
         axios.post('http://localhost:3001/api/updateUserData', {
             _id: objIdToUpdate,
-            update: {$pull: {tests_progress: {id: test_id}}},
+            update: {$pull: {tests_progress: {_id: test_id}}},
         });
 
         window.location.reload();
@@ -245,7 +245,7 @@ class ProfilePage extends React.Component {
                 <div className={'profile-page__tests'}>
                     {dataTests.map(test =>
                         users.map(user => user.tests_progress.map(finishedTest => {
-                                if (user.username == currentUser && finishedTest.id == test._id) {
+                                if (user.username == currentUser && finishedTest._id == test._id) {
                                     return (
                                         <div className={'profile-page__added'}>
                                             <div className={'profile-page__added__item'}>
