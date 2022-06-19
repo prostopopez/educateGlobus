@@ -6,6 +6,7 @@ import '../../style/main.css';
 
 const TestItem = (props) => {
     const {
+        id,
         difficulty,
         name,
         questions,
@@ -36,7 +37,7 @@ const TestItem = (props) => {
                 <span className={'item'}>Время</span>
                 <span className={'item'}>{time}</span>
             </div>
-            <a href={'/'} className={'button big red test-item__text__goTo'}>Пройти тест</a>
+            <a href={`/tests/test:${id}`} className={'button big red test-item__text__goTo'}>Пройти тест</a>
         </div>
     </div>;
 };

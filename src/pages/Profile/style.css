@@ -245,6 +245,12 @@ h2 {
     font-size: 29px;
   }
 }
+h2 + hr {
+  margin-bottom: 40px;
+}
+h3 + hr {
+  margin-bottom: 30px;
+}
 p {
   font-weight: 400;
   font-size: 30px;

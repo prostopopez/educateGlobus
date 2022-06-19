@@ -5,7 +5,7 @@ import CoursesCatalog from './pages/CoursesCatalog';
 import AuthorsCatalog from './pages/CoursesCatalog/Authors';
 import TopicsCatalog from './pages/CoursesCatalog/Topics';
 import TestCatalog from './pages/TestCatalog';
-import TestPage from './pages/TestCatalog/BookName';
+import TestPage from './pages/TestCatalog/TestPage';
 import AdminPage from './pages/AdminPage';
 
 const routes = [

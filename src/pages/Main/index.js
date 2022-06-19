@@ -114,7 +114,7 @@ class MainPage extends React.Component {
                         />)
                     }
                 </div>
-                <a href={'/'} className={'button big black'}>Хочу больше</a>
+                <a href={'/tests'} className={'button big black'}>Хочу больше</a>
             </div>
             <div className={'container contacts'}>
                 <h2>Контакты</h2>

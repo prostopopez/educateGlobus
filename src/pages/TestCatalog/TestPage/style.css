@@ -428,55 +428,11 @@ a.black:hover {
 .input:focus {
   border-color: #FE4444;
 }
-.footer {
-  padding: 30px 0;
-  background-color: #181818;
-  color: white;
+.test-page form {
+  margin-bottom: 30px;
 }
-.footer__cont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.footer__cont ul {
-  margin: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media (max-width: 767px) {
-  .footer__cont ul {
-    flex-direction: column;
-  }
-}
-.footer__cont ul li {
-  margin-right: 30px;
-  font-weight: bold;
-}
-@media (max-width: 767px) {
-  .footer__cont ul li {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-}
-.footer__cont ul li:last-of-type {
-  margin-right: 0;
-}
-@media (max-width: 767px) {
-  .footer__cont ul li:last-of-type {
-    margin-bottom: 0;
-  }
-}
-.footer__cont ul li .link {
-  color: white;
-}
-.footer__cont ul li .link svg path {
-  fill: white;
-  stroke: #181818;
-}
-.footer__description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.test-page fieldset {
+  margin-bottom: 30px;
+  border: 3px dotted #181818;
 }
 /*# sourceMappingURL=style.css.map */
